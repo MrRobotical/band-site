@@ -137,17 +137,17 @@ body {
   .footer__social-img1 {
     width: 35px;
     margin-top: 16px;
-    padding-left: 16px;
+    padding-left: 18px;
   }
   .footer__social-img2 {
     width: 20px;
     margin-left: 35px;
-    margin-top: 16px;
+    margin-top: 18px;
   }
   .footer__social-img3 {
     width: 38px;
     margin-left: 35px;
-    margin-top: 16px;
+    margin-top: 18px;
   }
   .footer__subtitle1 {
     margin-top: 32px;
@@ -176,6 +176,9 @@ body {
     margin-top: 28px;
     padding-left: 16px;
   }
+  .test-container {
+    position: relative;
+  }
   .footer__title-bottom {
     font-size: 35px;
     text-align: center;
@@ -183,9 +186,15 @@ body {
     text-align: left;
     padding-top: 48px;
     padding-left: 16px;
+    position: absolute;
+    top: 600px;
+    left: -2px;
+    color: white;
   }
   .footer__copyright {
+    margin-top: 64px;
     padding-left: 16px;
+    padding-bottom: 16px;
   }
 }
 @media (min-width: 768px) {
@@ -300,11 +309,10 @@ body {
   .photos-title {
     margin-top: 36px;
     margin-bottom: 16px;
-    margin-left: 6%;
+    margin-left: 1%;
     font-size: 48px;
     font-weight: 800;
     color: #000000;
-    padding-left: 16px;
   }
   .photos__container {
     display: flex;
@@ -326,19 +334,27 @@ body {
     padding: 30px 30px;
     position: relative;
   }
+  .test-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1.75%;
+    margin-top: 2%;
+  }
   .footer__title {
     font-size: 48px;
     font-weight: 800;
     color: white;
-    position: absolute;
-    top: 15%;
-    left: 4%;
+    width: 300px;
   }
   .footer__social {
-    position: absolute;
-    left: 37.5%;
-    top: 13%;
+    padding-right: 90px;
     width: 200px;
+  }
+  .footer__title-bottom {
+    font-size: 36px;
+    padding-top: 12px;
+    width: 200px;
+    padding-right: 55px;
   }
   .footer__social-img1 {
     width: 35px;
@@ -359,7 +375,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-left: 2%;
-    margin-top: 90px;
+    margin-top: 20px;
   }
   .footer__subtitle1 {
     margin-top: 32px;
@@ -381,13 +397,6 @@ body {
   }
   .footer__subtitle3-txt {
     margin-top: 28px;
-  }
-  .footer__title-bottom {
-    font-size: 36px;
-    padding-top: 48px;
-    position: absolute;
-    top: 3vh;
-    left: 70vw;
   }
   .footer__copyright {
     margin-top: 40px;
