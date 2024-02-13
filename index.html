@@ -8,10 +8,12 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__title">BANDSITE</div>
+      <div class="header__title">
+        <img src="/assets/Logo/Logo-bandsite.svg" class="header__logo" alt="" />
+      </div>
       <nav class="nav-bar">
         <li class="nav-bar__item nav-bar__item--highlight">Biography</li>
-        <li class="nav-bar__item">Shows</li>
+        <li class="nav-bar__item nav-bar__item--inactive">Shows</li>
       </nav>
     </header>
     <main>
@@ -32,7 +34,7 @@
         <div class="about__img-container">
           <img src="./assets/Images/band.jpg" class="about__img-photo" alt="" />
         </div>
-        <div class="about-quote">
+        <div class="about__quote">
           “We push each other to be the best. It's not uncommon for one of us to
           say 'this needs to be better, back to the drawing board'”
           <br /><br />
@@ -41,23 +43,21 @@
         </div>
 
         <div class="paragraphs-container">
-          <div class="about-text-left">
-            <p class="about-txt">
-              <span class="about-text-title">The Bees Knees</span
-              ><br /><br />The Bees Knees is a pop rock band originating from
-              San Francisco,California. The band consists a dynamic lineup
-              featuring two lead vocalists, two guitarists, a bassist, a
-              keyboardist and a drummer. The band achieved its first commercial
-              success as an unsigned act, drawing attention from their future
-              manager. Having extensive experience working with both new and
-              seasoned acts, the manager was confident the band could succeed
-              even further with more support, pushing The Bees Knees to sign
-              with a well known record label. <br />
-              <br />
-            </p>
+          <div class="about__txt about__text-left">
+            <span class="about__text-title">The Bees Knees</span><br /><br />The
+            Bees Knees is a pop rock band originating from San
+            Francisco,California. The band consists a dynamic lineup featuring
+            two lead vocalists, two guitarists, a bassist, a keyboardist and a
+            drummer. The band achieved its first commercial success as an
+            unsigned act, drawing attention from their future manager. Having
+            extensive experience working with both new and seasoned acts, the
+            manager was confident the band could succeed even further with more
+            support, pushing The Bees Knees to sign with a well known record
+            label. <br />
+            <br />
           </div>
 
-          <div class="about-txt about-text-right">
+          <div class="about__txt about__text-right">
             <p>
               From there, the band has soared, gaining international recognition
               and ranking in the top 10 on the Poster Charts. New fans
@@ -74,7 +74,7 @@
       </section>
 
       <section class="photos">
-        <div class="photos-title">Photo Gallery</div>
+        <div class="photos__title">Photo Gallery</div>
         <div class="photos__gallery-container">
           <div class="photos__container">
             <div class="photo__container">
@@ -110,7 +110,7 @@
     </main>
 
     <footer class="footer">
-      <div class="test-container">
+      <div class="footer__titles-container">
         <div class="footer__title">Get in Touch</div>
 
         <div class="footer__social">
@@ -148,7 +148,7 @@
 
         <div class="footer__tablet-dsktp-container-column">
           <div class="footer__subtitle2">Limitless Artist Group<br /></div>
-          <div class="footer_subtitle2-txt">
+          <div class="footer__subtitle2-txt">
             Booking Agent for<br />
             US / South America / Japan<br />
             <br />
