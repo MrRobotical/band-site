@@ -487,11 +487,13 @@ body {
   .footer__subtitle1 {
     font-size: 2vw;
     margin-top: 24px;
+    margin-right: 30px;
     font-weight: 800;
   }
 
   .footer__subtitle1-txt {
     margin-top: 28px;
+    font-size: 1.75vw;
   }
 
   .footer__subtitle2 {
@@ -502,6 +504,7 @@ body {
 
   .footer_subtitle2-txt {
     margin-top: 28px;
+    font-size: 1.75vw;
   }
 
   .footer__subtitle3 {
@@ -512,6 +515,7 @@ body {
 
   .footer__subtitle3-txt {
     margin-top: 28px;
+    font-size: 1.75vw;
   }
 
   .footer__copyright {
@@ -706,7 +710,7 @@ body {
   .footer__title {
     font-size: 48px;
     font-weight: 800;
-    color: aqua;
+    color: white;
     width: 300px;
     margin-left: 60px;
     // position: absolute;
@@ -766,6 +770,7 @@ body {
     margin-top: 32px;
     font-weight: 800;
     padding-left: 60px;
+    padding-right: 30px;
   }
 
   .footer__subtitle1-txt {
