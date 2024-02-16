@@ -94,13 +94,18 @@ body {
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
-    padding: 16px 0px 0px 16px;
-    margin-bottom: 36px;
+    padding: 16px 0px 36px 16px;
+  }
+  .about .about__quote-ref {
+    padding-top: 16px;
   }
   .about__text-title {
     font-weight: 800;
     padding-left: 16px;
     padding-bottom: 18px;
+  }
+  .about__text-right {
+    padding-top: 16px;
   }
   .about__txt {
     font-size: 13px;
@@ -136,10 +141,10 @@ body {
     background-color: #323232;
     color: #ffffff;
   }
-  .footer__titles-container {
+  .footer__headlines-container {
     position: relative;
   }
-  .footer__title {
+  .footer__headlines-top-title {
     font-size: 36px;
     font-weight: 700;
     color: white;
@@ -203,7 +208,7 @@ body {
     padding-top: 16px;
     padding-left: 16px;
   }
-  .footer__title-bottom {
+  .footer__headlines-logo {
     position: absolute;
     top: 625px;
     left: -2px;
@@ -284,17 +289,13 @@ body {
     padding: 48px 0px 36px 64px;
   }
   .about__img-container {
-    position: relative;
-    width: 90%;
-    padding-right: 64px;
-    padding-left: 64px;
-    text-align: center;
+    width: 80%;
+    margin: auto;
   }
   .about__img-photo {
     -o-object-fit: cover;
        object-fit: cover;
-    height: 400px;
-    width: 90%;
+    width: 100%;
   }
   .about__quote {
     color: #000000;
@@ -315,7 +316,7 @@ body {
     margin-top: 36px;
     margin-bottom: 24px;
   }
-  .paragraphs-container {
+  .about__paragraphs-container {
     display: flex;
     margin-right: 125px;
     margin-left: 125px;
@@ -327,6 +328,10 @@ body {
   }
   .about__text-left {
     padding-right: 16px;
+  }
+  .photos {
+    background-color: #fafafa;
+    padding-top: 36px;
   }
   .photos__title {
     font-size: 48px;
@@ -341,7 +346,8 @@ body {
     flex-wrap: wrap;
     width: 95%;
     padding-bottom: 2%;
-    padding-left: 2%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .photo__container {
     width: 30%;
@@ -357,25 +363,25 @@ body {
     padding: 28px 28px;
     position: relative;
   }
-  .footer__titles-container {
+  .footer__headlines-container {
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
     align-items: center;
   }
-  .footer__title {
+  .footer__headlines-top-title {
     font-size: 36px;
     font-weight: 700;
     color: white;
     width: 210px;
     margin-left: 16px;
   }
-  .footer__social {
+  .footer__headlines-social {
     width: 175px;
     padding-bottom: 18px;
     padding-right: 120px;
   }
-  .footer__title-bottom {
+  .footer__headlines-logo {
     font-size: 36px;
     width: 200px;
   }
@@ -394,34 +400,20 @@ body {
     margin-left: 35px;
     margin-top: 14px;
   }
-  .footer__tablet-dsktp-container {
+  .footer__txt-columns-container {
     display: flex;
     justify-content: space-between;
     padding-top: 24px;
     padding-left: 16px;
   }
-  .footer__subtitle1 {
+  .footer__subtitle1, .footer__subtitle2, .footer__subtitle3 {
     font-size: 14px;
     font-weight: 700;
   }
-  .footer__subtitle1-txt {
+  .footer__subtitle1-txt, .footer__subtitle2-txt {
     font-size: 14px;
     padding-top: 28px;
     line-height: 20px;
-  }
-  .footer__subtitle2 {
-    font-size: 14px;
-    font-weight: 700;
-  }
-  .footer__subtitle2-txt {
-    font-size: 14px;
-    margin-top: 28px;
-    line-height: 20px;
-  }
-  .footer__subtitle3 {
-    font-size: 14px;
-    font-weight: 700;
-    padding-right: 64px;
   }
   .footer__subtitle3-txt {
     font-size: 14px;
@@ -480,7 +472,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 500%;
     background-color: rgba(0, 0, 0, 0.5);
   }
   .hero__img-title {
@@ -492,26 +483,23 @@ body {
     color: white;
   }
   .about__title {
-    margin-top: 36px;
-    margin-bottom: 16px;
-    font-size: 46px;
-    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
     color: #000000;
-    padding-left: 16px;
+    padding: 5vh 0vw 3vh 12vw;
   }
   .about__img-container {
     position: relative;
-    height: 30%;
     width: 100%;
     text-align: center;
   }
   .about__img-photo {
     -o-object-fit: cover;
        object-fit: cover;
-    height: 30%;
-    width: 80%;
+    width: 66%;
   }
-  .hero__img-overlay {
+  .about__img-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -519,135 +507,131 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .about-quote {
-    color: #000000;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 24px;
-    padding: 1em 0em 0em 5em;
-    width: 75%;
-  }
-  .about-text-title {
+  .about__quote {
     font-size: 24px;
-    font-weight: 800;
+    color: #000000;
+    font-weight: 700;
+    line-height: 24px;
+    padding-left: 17vw;
+    width: 50%;
   }
-  .about-txt {
-    padding-left: 16px;
-    padding-right: 32px;
+  .about__text-title {
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 17vw;
+    margin-top: 36px;
+    margin-bottom: 24px;
   }
-  .paragraphs-container {
+  .about__paragraphs-container {
     display: flex;
-    margin-right: 100px;
-    margin-left: 100px;
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
     line-height: 24px;
   }
-  .about-text-right {
-    padding-top: 50px;
-  }
-  .photos-title {
-    margin-top: 36px;
-    margin-bottom: 16px;
-    margin-left: 3%;
+  .photos__title {
+    padding-top: 36px;
+    padding-left: 11vw;
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 0;
     color: #000000;
   }
   .photos__container {
     display: flex;
     flex-wrap: wrap;
-    width: 95%;
-    margin-bottom: 2%;
-    margin-left: 2%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
   }
-  .photo__container {
+  .photos .photo__container {
     width: 30%;
     margin: auto;
   }
-  .photo__container img {
+  .photos .photo__container img {
     width: 100%;
     margin-bottom: 8%;
   }
   .footer {
     background-color: #323232;
     color: #ffffff;
-    padding: 30px 30px;
+    padding: 28px 28px;
     position: relative;
   }
   .footer__titles-container {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 1.75%;
-    margin-top: 2%;
+    justify-content: space-between;
+    margin-top: 16px;
+    align-items: center;
   }
   .footer__title {
-    font-size: 48px;
-    font-weight: 800;
-    color: aqua;
-    width: 300px;
-    margin-left: 30px;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    width: 210px;
+    margin-left: 16px;
   }
   .footer__social {
-    margin-left: 93px;
-    transform: translateY(-8px);
-    width: 200px;
+    width: 175px;
+    padding-bottom: 18px;
+    padding-right: 120px;
   }
-  .footer__title-bottom {
+  .footer__headlines-logo {
     font-size: 36px;
-    padding-top: 12px;
     width: 200px;
-    padding-right: 55px;
-    margin-left: auto;
   }
   .footer__social-img1 {
-    width: 35px;
+    width: 25px;
     margin-top: 16px;
-    padding-left: 16px;
+    padding-left: 8px;
   }
   .footer__social-img2 {
-    width: 20px;
+    width: 15px;
     margin-left: 35px;
-    margin-top: 16px;
+    margin-top: 14px;
   }
   .footer__social-img3 {
-    width: 38px;
+    width: 28px;
     margin-left: 35px;
-    margin-top: 16px;
+    margin-top: 14px;
   }
-  .footer__tablet-dsktp-container {
+  .footer__txt-columns-container {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 2%;
-    margin-top: 20px;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-left: 16px;
   }
   .footer__subtitle1 {
-    margin-top: 32px;
-    font-weight: 800;
-    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 700;
   }
   .footer__subtitle1-txt {
-    margin-top: 28px;
-    padding-left: 30px;
+    font-size: 14px;
+    padding-top: 28px;
+    line-height: 20px;
   }
   .footer__subtitle2 {
-    margin-top: 32px;
-    font-weight: 800;
-    padding-left: 112px;
+    font-size: 14px;
+    font-weight: 700;
   }
-  .footer_subtitle2-txt {
-    margin-top: 28px;
-    padding-left: 112px;
+  .footer__subtitle2-txt {
+    font-size: 14px;
+    padding-top: 28px;
+    line-height: 20px;
   }
   .footer__subtitle3 {
-    margin-top: 32px;
-    font-weight: 800;
-    padding-left: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 64px;
   }
   .footer__subtitle3-txt {
+    font-size: 14px;
     margin-top: 28px;
-    padding-left: 100px;
+    line-height: 20px;
+    padding-right: 64px;
   }
   .footer__copyright {
-    margin-top: 40px;
-    padding-left: 52px;
+    font-size: 14px;
+    padding-top: 40px;
+    padding-left: 16px;
   }
 }/*# sourceMappingURL=styles.css.map */
