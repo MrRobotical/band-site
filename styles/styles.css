@@ -220,6 +220,10 @@ ul {
     line-height: 3rem;
     font-weight: 400;
     padding-left: 4rem;
+    transition: transform 0.3s ease;
+  }
+  .header__title:hover {
+    transform: scale(1.07);
   }
   .nav-bar {
     display: flex;
@@ -234,6 +238,7 @@ ul {
     text-align: center;
     padding-top: 0.6rem;
     margin-left: 4rem;
+    transition: transform 0.3s ease;
   }
   .nav-bar__item--highlight {
     border-bottom: 4px solid white;
@@ -242,6 +247,9 @@ ul {
   }
   .nav-bar__item--inactive {
     color: #e1e1e1;
+  }
+  .nav-bar__item:hover {
+    transform: scale(1.07);
   }
   .hero__img-container {
     position: relative;
@@ -330,7 +338,7 @@ ul {
     line-height: 44px;
     font-weight: 700;
     color: #323232;
-    padding-top: 2.25rem;
+    padding-top: 2rem;
     padding-bottom: 2.25rem;
     padding-left: 3vw;
   }
@@ -349,6 +357,12 @@ ul {
   .photo__container img {
     width: 100%;
     margin-bottom: 8%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  .photo__container img:hover {
+    filter: none;
+    transform: scale(1.05);
   }
   .footer {
     background-color: #323232;
