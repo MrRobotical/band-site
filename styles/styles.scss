@@ -16,6 +16,14 @@ body {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   background-color: $bandsite-black;
   color: $white;
@@ -82,7 +90,7 @@ body {
       position: absolute;
       top: 40%;
       left: 5%;
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: white;
     }
