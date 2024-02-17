@@ -29,20 +29,20 @@
   font-weight: 400;
 }
 
-// Tablet & Desktip Mixins
+// Tablet & Desktop Mixins
 @mixin dsk-tablet-page-header {
   font-size: 60px;
   line-height: 68px;
   font-weight: 700;
 }
 
-@mixin regular-text {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
+@mixin dsk-tablet-sect-header {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
 }
 
-@mixin dsk-tablet-page-subheader {
+@mixin dsk-tablet-subheader {
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;

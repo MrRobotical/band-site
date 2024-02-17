@@ -21,9 +21,8 @@ body {
   color: $white;
 }
 
-// MOBILE RESPONSIVE
+// MOBILE
 @media (max-width: 768px) {
-  // HEADER & NAV BAR - MOBILE
   .header {
     padding-top: 1.5rem;
 
@@ -56,7 +55,6 @@ body {
     }
   }
 
-  // HERO - MOBILE
   .hero {
     &__img-container {
       position: relative;
@@ -90,7 +88,6 @@ body {
     }
   }
 
-  // ABOUT - MOBILE
   .about {
     &__title {
       @include mobile-sect-header;
@@ -141,7 +138,6 @@ body {
     }
   }
 
-  // PHOTO GALLERY - MOBILE
   .photos {
     &__title {
       @include mobile-sect-header;
@@ -166,7 +162,6 @@ body {
       padding-bottom: 1rem;
     }
   }
-  // FOOTER - MOBILE
 
   .footer {
     background-color: $bandsite-black;
@@ -249,7 +244,7 @@ body {
     }
 
     &__copyright {
-      font-size: 0.813rem;
+      @include mobile-footer-copy;
       padding-top: 4rem;
       padding-left: 1rem;
       padding-bottom: 1rem;
@@ -258,9 +253,7 @@ body {
 }
 
 // TABLET RESPONSIVE
-
 @media (min-width: 769px) {
-  //HEADER & NAV - TABLET
   .header {
     padding-top: 1rem;
     display: flex;
@@ -297,8 +290,6 @@ body {
     }
   }
 
-  // HERO TABLET
-
   .hero {
     &__img-container {
       position: relative;
@@ -326,16 +317,13 @@ body {
       left: 8%;
       font-size: 4.25rem;
       font-weight: 700;
-      color: white;
+      color: $white;
     }
   }
 
-  // ABOUT TABLET
-
   .about {
     &__title {
-      font-size: 2rem;
-      font-weight: 700;
+      @include dsk-tablet-sect-header;
       color: $bandSite-DarkBlack;
       padding: 3rem 0rem 1.5rem 0rem;
       padding-left: 4vw;
@@ -352,10 +340,8 @@ body {
     }
 
     &__quote {
+      @include dsk-tablet-subheader;
       color: $bandSite-DarkBlack;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 2rem;
       padding: 1em 0em 0em 5em;
       width: 75%;
     }
@@ -379,6 +365,7 @@ body {
       margin-left: 7.83rem;
       line-height: 1.5rem;
       padding-bottom: 2rem;
+      @include dsk-tablet-body-copy;
     }
 
     &__text-right {
@@ -390,15 +377,12 @@ body {
     }
   }
 
-  // PHOTO GALLERY - TABLET
-
   .photos {
     background-color: $alabastor;
     padding-top: 36px;
 
     &__title {
-      font-size: 3rem;
-      font-weight: 700;
+      @include dsk-tablet-sect-header;
       color: $bandSite-DarkBlack;
       padding-top: 2.25rem;
       padding-bottom: 2.25rem;
@@ -425,8 +409,6 @@ body {
     }
   }
 
-  // FOOTER TABLET
-
   .footer {
     background-color: $bandsite-black;
     color: $white;
@@ -443,7 +425,7 @@ body {
     &__headlines-top-title {
       font-size: 2.25rem;
       font-weight: 700;
-      color: white;
+      color: $white;
       width: 210px;
       margin-left: 1rem;
     }
@@ -515,23 +497,6 @@ body {
 
 // DESKTOP RESPONSIVE
 @media (min-width: 1280px) {
-  //HEADER & NAV - DESKTOP
-  .header {
-    background-color: $bandsite-black;
-    color: $white;
-    padding-top: 1.25rem;
-    display: flex;
-    justify-content: left;
-  }
-
-  .header__title {
-    font-size: 2rem;
-    text-align: center;
-    padding-bottom: 1rem;
-    padding-left: 3.75rem;
-  }
-
-  // ABOUT DESKTOP
   .about {
     &__title {
       font-size: 2.25rem;
@@ -552,164 +517,40 @@ body {
       width: 70%;
     }
 
-    &__img-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
     &__quote {
-      font-size: 1.5rem;
-      color: $bandSite-DarkBlack;
-      font-weight: 700;
-      line-height: 1.5rem;
       padding-left: 17vw;
       width: 50%;
     }
 
     &__text-title {
-      font-size: 1.5rem;
-      font-weight: 700;
       padding-left: 17vw;
-      margin-top: 2.25rem;
-      margin-bottom: 1.5rem;
     }
 
     &__paragraphs-container {
-      display: flex;
       width: 65%;
       margin-right: auto;
       margin-left: auto;
-      line-height: 1.5rem;
     }
   }
-
-  // Photo Gallery Desktop
 
   .photos {
     &__title {
-      font-size: 2.25rem;
-      padding-top: 2.25rem;
       padding-left: 11vw;
-      font-weight: 700;
-      color: $bandSite-DarkBlack;
     }
 
     &__container {
-      display: flex;
-      flex-wrap: wrap;
       width: 80%;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    .photo__container {
-      width: 30%;
-      margin: auto;
-    }
-
-    .photo__container img {
-      width: 100%;
-      margin-bottom: 8%;
     }
   }
 
-  // Footer Desktop
   .footer {
-    background-color: $bandsite-black;
-    color: $white;
-    padding: 28px 28px;
-    position: relative;
-
-    &__headlines-top-title {
-      font-size: 36px;
-      font-weight: 700;
-      color: white;
-      width: 210px;
-      margin-left: 16px;
-    }
-
     &__headlines-social {
       width: 175px;
-      padding-bottom: 18px;
       padding-right: 38.5vw;
-    }
-
-    &__headlines-logo {
-      font-size: 2.25rem;
-      width: 200px;
-    }
-
-    &__social-img1 {
-      width: 25px;
-      margin-top: 16px;
-      padding-left: 8px;
-    }
-
-    &__social-img2 {
-      width: 15px;
-      margin-left: 35px;
-      margin-top: 14px;
-    }
-
-    &__social-img3 {
-      width: 28px;
-      margin-left: 35px;
-      margin-top: 14px;
-    }
-
-    &__txt-columns-container {
-      display: flex;
-      justify-content: space-between;
-      padding-top: 24px;
-      padding-left: 16px;
     }
 
     &__txt-column3 {
       padding-right: 30vw;
-    }
-
-    &__subtitle1 {
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    &__subtitle1-txt {
-      font-size: 14px;
-      padding-top: 28px;
-      line-height: 20px;
-    }
-
-    &__subtitle2 {
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    &__subtitle2-txt {
-      font-size: 14px;
-      padding-top: 28px;
-      line-height: 20px;
-    }
-
-    &__subtitle3 {
-      font-size: 14px;
-      font-weight: 700;
-      padding-right: 64px;
-    }
-
-    &__subtitle3-txt {
-      font-size: 14px;
-      line-height: 20px;
-      padding-right: 64px;
-    }
-
-    &__copyright {
-      font-size: 14px;
-      padding-top: 40px;
-      padding-left: 16px;
     }
   }
 }
