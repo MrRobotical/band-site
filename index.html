@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
-    <link rel="stylesheet" href="./styles/styles.css" class="rel" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__title">
-        <img src="/assets/Logo/Logo-bandsite.svg" class="header__logo" alt="" />
+        <a href="./index.html"
+          ><img
+            src="/assets/Logo/Logo-bandsite.svg"
+            class="header__logo"
+            alt="Bandsite Logo"
+        /></a>
       </div>
       <nav class="nav-bar">
-        <li class="nav-bar__item nav-bar__item--highlight">Biography</li>
-        <li class="nav-bar__item nav-bar__item--inactive">Shows</li>
+        <ul class="nav-bar__ul">
+          <li class="nav-bar__item nav-bar__item--highlight">Biography</li>
+          <li class="nav-bar__item nav-bar__item--inactive">Shows</li>
+        </ul>
       </nav>
     </header>
     <main>
@@ -22,7 +29,7 @@
           <img
             src="./assets/Images/hero-bio.jpg"
             class="hero__img-photo"
-            alt=""
+            alt="hero-image"
           />
           <div class="hero__img-overlay"></div>
           <h1 class="hero__img-title">The Bees Knees</h1>
@@ -77,31 +84,58 @@
         <div class="photos__gallery-container">
           <div class="photos__container">
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-1.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-1.jpg"
+                alt="Crowd with Lights"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-2.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-2.jpg"
+                alt="Girl with hands in the air"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-3.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-3.jpg"
+                alt="Multiple hands in the air"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-4.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-4.jpg"
+                alt="Girl with hand in the air"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-5.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-5.jpg"
+                alt="Light show on stage"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-6.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-6.jpg"
+                alt="Signer on stage"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-7.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-7.jpg"
+                alt="Light show on stage"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-8.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-8.jpg"
+                alt="DJ turntable"
+              />
             </div>
             <div class="photo__container">
-              <img src="./assets/Images/Photo-gallery-9.jpg" alt="" />
+              <img
+                src="./assets/Images/Photo-gallery-9.jpg"
+                alt="Confetti in crowd"
+              />
             </div>
           </div>
         </div>
@@ -116,17 +150,17 @@
           <img
             src="./assets/Icons/SVG/Icon-instagram.svg"
             class="footer__social-img1"
-            alt=""
+            alt="instagram"
           />
           <img
             src="./assets/Icons/SVG/Icon-facebook.svg"
             class="footer__social-img2"
-            alt=""
+            alt="facebook"
           />
           <img
             src="./assets/Icons/SVG/Icon-twitter.svg"
             class="footer__social-img3"
-            alt=""
+            alt="twitter"
           />
         </div>
 
@@ -169,7 +203,7 @@
       </div>
 
       <p class="footer__copyright">
-        Copyright The Bees Knees @ 2023 All Rights eserved
+        Copyright The Bees Knees © 2023 All Rights reserved
       </p>
     </footer>
   </body>
