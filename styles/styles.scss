@@ -229,9 +229,8 @@ ul {
 
     &__headlines-logo {
       position: absolute;
-      top: 33rem;
-      left: -2px;
-      font-size: 2rem;
+      top: 34rem;
+      left: 0.05rem;
       color: $white;
       padding-top: 1rem;
       padding-left: 1rem;
@@ -444,22 +443,22 @@ ul {
     }
 
     &__headlines-top-title {
-      font-size: 2.25rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: $white;
-      width: 13.125rem;
+      width: 13.25rem;
       margin-left: 1rem;
     }
 
     &__headlines-social {
       width: 10.94rem;
       padding-bottom: 1.125rem;
-      padding-right: 7.5rem;
+      padding-right: 9rem;
     }
 
-    &__headlines-logo {
-      font-size: 2.25rem;
-      width: 12.5rem;
+    &__headlines-logo img {
+      width: 7.5rem;
+      padding-right: 2rem;
     }
 
     &__social-img1 {
@@ -487,6 +486,10 @@ ul {
       padding-left: 1rem;
     }
 
+    &__txt-column3 {
+      padding-right: 2rem;
+    }
+
     &__subtitle1,
     &__subtitle2,
     &__subtitle3 {
@@ -507,10 +510,6 @@ ul {
       text-decoration: none;
       color: $white;
       padding-top: 1.5rem;
-    }
-
-    &__subtitle3-txt {
-      padding-right: 4rem;
     }
 
     &__copyright {
@@ -570,13 +569,31 @@ ul {
   }
 
   .footer {
+    &__headlines-container {
+      padding-left: 7rem;
+    }
+
     &__headlines-social {
       width: 175px;
-      padding-right: 38.5vw;
+      padding-right: 26vw;
+    }
+
+    &__headlines-logo img {
+      width: 7.5rem;
+      padding-right: 8rem;
     }
 
     &__txt-column3 {
-      padding-right: 30vw;
+      padding-right: 25vw;
+    }
+
+    &__txt-columns-container {
+      padding-left: 8.3rem;
+    }
+
+    &__copyright {
+      padding-left: 8.3rem;
+      padding-bottom: 2rem;
     }
   }
 }
