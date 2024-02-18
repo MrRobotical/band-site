@@ -182,7 +182,7 @@ ul {
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     padding-left: 1rem;
   }
   .footer__subtitle1-txt, .footer__subtitle2-txt, .footer__subtitle3-txt {
@@ -194,12 +194,18 @@ ul {
   }
   .footer__headlines-logo {
     position: absolute;
-    top: 38rem;
+    top: 33rem;
     left: -2px;
     font-size: 2rem;
     color: #ffffff;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     padding-left: 1rem;
+  }
+  .footer__email {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    padding-top: 1rem;
   }
   .footer__copyright {
     font-size: 13px;
@@ -419,15 +425,21 @@ ul {
   }
   .footer__subtitle1-txt, .footer__subtitle2-txt, .footer__subtitle3-txt {
     font-size: 0.9rem;
-    padding-top: 1.75rem;
+    padding-top: 1.5rem;
     line-height: 1.25rem;
+  }
+  .footer__email {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    padding-top: 1.5rem;
   }
   .footer__subtitle3-txt {
     padding-right: 4rem;
   }
   .footer__copyright {
     font-size: 0.875rem;
-    padding-top: 2.5rem;
+    padding-top: 3.5rem;
     padding-left: 1rem;
   }
 }
