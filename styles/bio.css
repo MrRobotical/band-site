@@ -1,12 +1,34 @@
 @font-face {
-  font-family: bandsite;
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf"), url("../assets/Font/AvenirNextLTPro-Demi.otf"), url("../assets/Font/AvenirNextLTPro-Bold.otf");
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf"), format("opentype"), url("../assets/Font/Alternative files/AvenirNextLTPro.ttf"), format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf"), format("opentype"), url("../assets/Font/Alternative files/AvenirNextLTProDemi.ttf"), format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf"), format("opentype"), url("../assets/Font/Alternative files/AvenirNextLTProBold.ttf"), format("truetype");
+  font-weight: 700;
 }
 body {
-  font-family: bandsite;
+  font-family: "Avenir";
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.header,
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+}
+
+.header__logo {
+  width: 7.5rem;
+  cursor: pointer;
 }
 
 h1,
@@ -19,22 +41,13 @@ ul {
   padding: 0;
 }
 
-.header {
-  background-color: #323232;
-  color: #ffffff;
-}
-
 @media (max-width: 768px) {
   .header {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
   }
   .header__title {
     text-align: center;
     padding-bottom: 1rem;
-  }
-  .header__title img {
-    width: 9rem;
-    cursor: pointer;
   }
   .nav-bar {
     display: flex;
@@ -42,11 +55,10 @@ ul {
   }
   .nav-bar__ul {
     display: flex;
+    width: 100%;
   }
   .nav-bar__item {
-    font-size: 1.125rem;
-    font-weight: 400;
-    width: 10.25rem;
+    width: 50%;
     text-align: center;
   }
   .nav-bar__item--highlight {
@@ -59,42 +71,32 @@ ul {
   }
   .hero__img-container {
     position: relative;
-    height: 35%;
     width: 100%;
   }
   .hero__img-photo {
-    -o-object-fit: cover;
-       object-fit: cover;
-    height: 35%;
     width: 100%;
   }
   .hero__img-overlay {
     position: absolute;
     top: 0;
-    left: 100;
     width: 100%;
-    height: 100%;
+    height: 98.5%;
     background-color: rgba(50, 50, 50, 0.5);
   }
   .hero__img-title {
+    font-size: 7vw;
+    font-weight: 600;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 5%;
-    font-size: 2.5rem;
-    font-weight: 700;
     color: #ffffff;
   }
   .about__title {
     font-size: 24px;
     line-height: 24px;
-    font-weight: 800;
+    font-weight: 600;
     color: #323232;
     padding: 1.5rem 1rem 1rem 1rem;
-  }
-  .about__img-container {
-    position: relative;
-    width: 100%;
-    text-align: center;
   }
   .about__img-photo {
     -o-object-fit: cover;
@@ -106,15 +108,16 @@ ul {
   .about__quote {
     color: #323232;
     font-size: 1.125rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.5rem;
-    padding: 1rem 0rem 2.25rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
   }
   .about__quote-ref {
     padding-top: 1rem;
   }
   .about__text-title {
-    font-size: 1rem;
+    font-size: 14px;
+    line-height: 22px;
     font-weight: 600;
     padding-left: 1rem;
     padding-bottom: 1rem;
@@ -128,13 +131,14 @@ ul {
     font-weight: 400;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 1rem;
   }
   .photos__title {
     font-size: 24px;
     line-height: 24px;
-    font-weight: 800;
+    font-weight: 600;
     color: #323232;
-    padding-top: 2.25rem;
+    padding-top: 1.5rem;
     padding-left: 1rem;
     padding-bottom: 1rem;
   }
@@ -142,40 +146,38 @@ ul {
     position: relative;
     text-align: center;
     padding-bottom: 1rem;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .photos__container img {
     -o-object-fit: cover;
        object-fit: cover;
-    width: 92%;
+    width: 99%;
     padding-bottom: 1rem;
-  }
-  .footer {
-    background-color: #323232;
-    color: #ffffff;
   }
   .footer__headlines-container {
     position: relative;
   }
   .footer__headlines-top-title {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     padding-top: 2rem;
     padding-left: 1rem;
   }
+  .footer__headlines-social {
+    padding-top: 1rem;
+  }
   .footer__social-img1 {
     width: 1.75rem;
-    padding-top: 1rem;
     padding-left: 1rem;
   }
   .footer__social-img2 {
     width: 1.1rem;
-    padding-top: 1rem;
     padding-left: 2rem;
   }
   .footer__social-img3 {
     width: 1.75rem;
-    padding-top: 1rem;
     padding-left: 2rem;
   }
   .footer__subtitle1, .footer__subtitle2, .footer__subtitle3 {
@@ -189,16 +191,14 @@ ul {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding: 1rem 0 0 1rem;
   }
   .footer__headlines-logo {
     position: absolute;
     top: 34rem;
     left: 0.05rem;
     color: #ffffff;
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding: 1rem 0 0 1rem;
   }
   .footer__email {
     display: inline-block;
@@ -219,12 +219,13 @@ ul {
   .header {
     padding-top: 1rem;
     display: flex;
-    justify-content: left;
   }
   .header__title {
-    line-height: 3rem;
-    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-left: 4rem;
+    padding-bottom: 0.8rem;
     transition: transform 0.3s ease;
   }
   .header__title:hover {
@@ -239,7 +240,6 @@ ul {
   }
   .nav-bar__item {
     font-size: 1.125rem;
-    font-weight: 400;
     text-align: center;
     padding-top: 0.6rem;
     margin-left: 4rem;
@@ -269,9 +269,8 @@ ul {
   .hero__img-overlay {
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 98.5%;
     background-color: rgba(50, 50, 50, 0.5);
   }
   .hero__img-title {
@@ -279,15 +278,15 @@ ul {
     top: 40%;
     left: 8%;
     font-size: 4.25rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
   }
   .about__title {
     font-size: 36px;
     line-height: 44px;
-    font-weight: 700;
+    font-weight: 600;
     color: #323232;
-    padding: 3rem 0rem 1.5rem 0rem;
+    padding: 2.25rem 0rem 1.5rem 0rem;
     padding-left: 4vw;
   }
   .about__img-container {
@@ -304,24 +303,26 @@ ul {
     line-height: 32px;
     font-weight: 600;
     color: #323232;
-    padding: 1em 0em 0em 5em;
+    padding-top: 1rem;
+    padding-left: 11vw;
     width: 75%;
   }
   .about__quote-ref {
     font-size: 1.125rem;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
   }
   .about__text-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding-left: 7.813rem;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    padding-left: 12vw;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
   }
   .about__paragraphs-container {
     display: flex;
-    margin-right: 7.83rem;
-    margin-left: 7.83rem;
+    margin-right: 12vw;
+    margin-left: 12vw;
     line-height: 1.5rem;
     padding-bottom: 2rem;
     font-size: 14px;
@@ -336,22 +337,22 @@ ul {
   }
   .photos {
     background-color: #fafafa;
-    padding-top: 36px;
+    padding-top: 1rem;
   }
   .photos__title {
     font-size: 36px;
     line-height: 44px;
-    font-weight: 700;
+    font-weight: 600;
     color: #323232;
     padding-top: 2rem;
-    padding-bottom: 2.25rem;
+    padding-bottom: 1.5rem;
     padding-left: 3vw;
   }
   .photos__container {
     display: flex;
     flex-wrap: wrap;
-    width: 95%;
-    padding-bottom: 2rem;
+    width: 96%;
+    padding-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -370,8 +371,6 @@ ul {
     transform: scale(1.05);
   }
   .footer {
-    background-color: #323232;
-    color: #ffffff;
     padding: 1.3rem 1.3rem;
     position: relative;
   }
@@ -382,28 +381,24 @@ ul {
     align-items: center;
   }
   .footer__headlines-top-title {
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 2.25rem;
+    font-weight: 600;
     color: #ffffff;
     margin-left: 1rem;
   }
   .footer__headlines-social {
-    padding-bottom: 1.125rem;
-    padding-right: 10rem;
+    padding: 0.8rem 9.8rem 1.125rem 0;
   }
   .footer__social-img1 {
     width: 1.6rem;
-    margin-top: 1rem;
     padding-left: 0.5rem;
   }
   .footer__social-img2 {
     width: 0.93rem;
-    margin-top: 1rem;
     margin-left: 2rem;
   }
   .footer__social-img3 {
     width: 1.75rem;
-    margin-top: 1rem;
     margin-left: 2rem;
   }
   .footer__headlines-logo img {
@@ -420,13 +415,16 @@ ul {
     padding-right: 1rem;
   }
   .footer__subtitle1, .footer__subtitle2, .footer__subtitle3 {
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-weight: 600;
   }
   .footer__subtitle1-txt, .footer__subtitle2-txt, .footer__subtitle3-txt {
-    font-size: 0.9rem;
     padding-top: 1.5rem;
-    line-height: 1.25rem;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
   }
   .footer__email {
     display: inline-block;
@@ -441,11 +439,13 @@ ul {
   }
 }
 @media (min-width: 1280px) {
+  .header {
+    padding-left: 7vw;
+  }
+  .hero__img-title {
+    padding-left: 3vw;
+  }
   .about__title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #323232;
-    padding: 2.5rem 0rem 1.5rem 0rem;
     padding-left: 11vw;
   }
   .about__img-container {
@@ -467,8 +467,8 @@ ul {
   }
   .about__paragraphs-container {
     width: 65%;
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: 17vw;
+    margin-left: 17vw;
   }
   .photos__title {
     padding-left: 11vw;
@@ -481,7 +481,7 @@ ul {
   }
   .footer__headlines-social {
     width: 175px;
-    padding-right: 25vw;
+    padding-right: 24.3vw;
   }
   .footer__headlines-logo img {
     width: 7.5rem;
@@ -497,4 +497,4 @@ ul {
     padding-left: 8.3rem;
     padding-bottom: 2rem;
   }
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=bio.css.map */

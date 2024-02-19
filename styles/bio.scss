@@ -1,19 +1,26 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
-
-@font-face {
-  font-family: bandsite;
-  src: url('../assets/Font/AvenirNextLTPro-Regular.otf'),
-    url('../assets/Font/AvenirNextLTPro-Demi.otf'),
-    url('../assets/Font/AvenirNextLTPro-Bold.otf');
-}
+@use './partials/typography' as *;
 
 // BASE STYLES
 body {
-  font-family: bandsite;
+  font-family: 'Avenir';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.header,
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+}
+
+.header {
+  &__logo {
+    width: 7.5rem;
+    cursor: pointer;
+  }
 }
 
 h1,
@@ -26,24 +33,14 @@ ul {
   padding: 0;
 }
 
-.header {
-  background-color: $bandsite-black;
-  color: $white;
-}
-
 // MOBILE
 @media (max-width: 768px) {
   .header {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 
     &__title {
       text-align: center;
       padding-bottom: 1rem;
-
-      img {
-        width: 9rem;
-        cursor: pointer;
-      }
     }
   }
 
@@ -53,12 +50,11 @@ ul {
 
     &__ul {
       display: flex;
+      width: 100%;
     }
 
     &__item {
-      font-size: 1.125rem;
-      font-weight: 400;
-      width: 10.25rem;
+      width: 50%;
       text-align: center;
 
       &--highlight {
@@ -76,32 +72,28 @@ ul {
   .hero {
     &__img-container {
       position: relative;
-      height: 35%;
       width: 100%;
     }
 
     &__img-photo {
-      object-fit: cover;
-      height: 35%;
       width: 100%;
     }
 
     &__img-overlay {
       position: absolute;
       top: 0;
-      left: 100;
       width: 100%;
-      height: 100%;
+      height: 98.5%;
       background-color: rgba($bandsite-black, 0.5);
     }
 
-    //Increased the font-size to better represent mock-up.
+    // Switched to vw units because I thought the 24px/1.5rem requested in the stylesheet looked too small in the 400px to 768px range
     &__img-title {
+      font-size: 7vw;
+      font-weight: 600;
       position: absolute;
-      top: 40%;
+      top: 45%;
       left: 5%;
-      font-size: 2.5rem;
-      font-weight: 700;
       color: $white;
     }
   }
@@ -110,14 +102,15 @@ ul {
     &__title {
       @include mobile-sect-header;
       color: $bandsite-black;
-      padding: 1.5rem 1rem 1rem 1rem;
+      padding: $padding-mobile-after-headline;
     }
 
-    &__img-container {
-      position: relative;
-      width: 100%;
-      text-align: center;
-    }
+    // &__img-container {
+    //   position: relative;
+    //   width: 100%;
+    //   text-align: center;
+    // }
+
     &__img-photo {
       object-fit: cover;
       width: 95%;
@@ -128,9 +121,9 @@ ul {
     &__quote {
       color: $bandsite-black;
       font-size: 1.125rem;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1.5rem;
-      padding: 1rem 0rem 2.25rem 1rem;
+      padding: 1rem 1rem 1rem 1rem;
     }
 
     &__quote-ref {
@@ -138,8 +131,7 @@ ul {
     }
 
     &__text-title {
-      font-size: 1rem;
-      font-weight: 600;
+      @include mobile-sub-header;
       padding-left: 1rem;
       padding-bottom: 1rem;
     }
@@ -152,6 +144,7 @@ ul {
       @include mobile-body-copy;
       padding-left: 1rem;
       padding-right: 1rem;
+      padding-bottom: 1rem;
     }
   }
 
@@ -159,7 +152,7 @@ ul {
     &__title {
       @include mobile-sect-header;
       color: $bandsite-black;
-      padding-top: 2.25rem;
+      padding-top: 1.5rem;
       padding-left: 1rem;
       padding-bottom: 1rem;
     }
@@ -168,46 +161,46 @@ ul {
       position: relative;
       text-align: center;
       padding-bottom: 1rem;
+      padding-left: 16px;
+      padding-right: 16px;
     }
 
     &__container img {
       object-fit: cover;
-      width: 92%;
+      width: 99%;
       padding-bottom: 1rem;
     }
   }
 
   .footer {
-    background-color: $bandsite-black;
-    color: $white;
-
     &__headlines-container {
       position: relative;
     }
 
     &__headlines-top-title {
       font-size: 2rem;
-      font-weight: 700;
+      font-weight: 600;
       color: $white;
       padding-top: 2rem;
       padding-left: 1rem;
     }
 
+    &__headlines-social {
+      padding-top: 1rem;
+    }
+
     &__social-img1 {
       width: 1.75rem;
-      padding-top: 1rem;
       padding-left: 1rem;
     }
 
     &__social-img2 {
       width: 1.1rem;
-      padding-top: 1rem;
       padding-left: 2rem;
     }
 
     &__social-img3 {
       width: 1.75rem;
-      padding-top: 1rem;
       padding-left: 2rem;
     }
 
@@ -223,8 +216,7 @@ ul {
     &__subtitle2-txt,
     &__subtitle3-txt {
       @include mobile-footer-copy;
-      padding-top: 1rem;
-      padding-left: 1rem;
+      padding: 1rem 0 0 1rem;
     }
 
     &__headlines-logo {
@@ -232,8 +224,7 @@ ul {
       top: 34rem;
       left: 0.05rem;
       color: $white;
-      padding-top: 1rem;
-      padding-left: 1rem;
+      padding: 1rem 0 0 1rem;
     }
 
     &__email {
@@ -257,12 +248,14 @@ ul {
   .header {
     padding-top: 1rem;
     display: flex;
-    justify-content: left;
+    // justify-content: left;
 
     &__title {
-      line-height: 3rem;
-      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding-left: 4rem;
+      padding-bottom: 0.8rem;
       transition: transform 0.3s ease;
     }
 
@@ -281,7 +274,6 @@ ul {
 
     &__item {
       font-size: 1.125rem;
-      font-weight: 400;
       text-align: center;
       padding-top: 0.6rem;
       margin-left: 4rem;
@@ -318,9 +310,8 @@ ul {
     &__img-overlay {
       position: absolute;
       top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
+      height: 98.5%;
       background-color: rgba($bandsite-black, 0.5);
     }
 
@@ -329,7 +320,7 @@ ul {
       top: 40%;
       left: 8%;
       font-size: 4.25rem;
-      font-weight: 700;
+      font-weight: 600;
       color: $white;
     }
   }
@@ -338,7 +329,7 @@ ul {
     &__title {
       @include dsk-tablet-sect-header;
       color: $bandsite-black;
-      padding: 3rem 0rem 1.5rem 0rem;
+      padding: 2.25rem 0rem 1.5rem 0rem;
       padding-left: 4vw;
     }
 
@@ -355,27 +346,27 @@ ul {
     &__quote {
       @include dsk-tablet-subheader;
       color: $bandsite-black;
-      padding: 1em 0em 0em 5em;
+      padding-top: 1rem;
+      padding-left: 11vw;
       width: 75%;
     }
 
     &__quote-ref {
       font-size: 1.125rem;
-      padding-top: 1.5rem;
+      padding-top: 1rem;
     }
 
     &__text-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      padding-left: 7.813rem;
+      @include dsk-tablet-subheader;
+      padding-left: 12vw;
       margin-top: 2rem;
       margin-bottom: 1.5rem;
     }
 
     &__paragraphs-container {
       display: flex;
-      margin-right: 7.83rem;
-      margin-left: 7.83rem;
+      margin-right: 12vw;
+      margin-left: 12vw;
       line-height: 1.5rem;
       padding-bottom: 2rem;
       @include dsk-tablet-body-copy;
@@ -392,21 +383,21 @@ ul {
 
   .photos {
     background-color: $alabastor;
-    padding-top: 36px;
+    padding-top: 1rem;
 
     &__title {
       @include dsk-tablet-sect-header;
       color: $bandsite-black;
       padding-top: 2rem;
-      padding-bottom: 2.25rem;
+      padding-bottom: 1.5rem;
       padding-left: 3vw;
     }
 
     &__container {
       display: flex;
       flex-wrap: wrap;
-      width: 95%;
-      padding-bottom: 2rem;
+      width: 96%;
+      padding-bottom: 1rem;
       margin-left: auto;
       margin-right: auto;
     }
@@ -430,8 +421,6 @@ ul {
   }
 
   .footer {
-    background-color: $bandsite-black;
-    color: $white;
     padding: 1.3rem 1.3rem;
     position: relative;
 
@@ -443,32 +432,28 @@ ul {
     }
 
     &__headlines-top-title {
-      font-size: 2.2rem;
-      font-weight: 700;
+      font-size: 2.25rem;
+      font-weight: 600;
       color: $white;
       margin-left: 1rem;
     }
 
     &__headlines-social {
-      padding-bottom: 1.125rem;
-      padding-right: 10rem;
+      padding: 0.8rem 9.8rem 1.125rem 0;
     }
 
     &__social-img1 {
       width: 1.6rem;
-      margin-top: 1rem;
       padding-left: 0.5rem;
     }
 
     &__social-img2 {
       width: 0.93rem;
-      margin-top: 1rem;
       margin-left: 2rem;
     }
 
     &__social-img3 {
       width: 1.75rem;
-      margin-top: 1rem;
       margin-left: 2rem;
     }
 
@@ -491,16 +476,15 @@ ul {
     &__subtitle1,
     &__subtitle2,
     &__subtitle3 {
-      font-size: 0.9rem;
-      font-weight: 700;
+      @include dsk-tablet-footer-copy;
+      font-weight: 600;
     }
 
     &__subtitle1-txt,
     &__subtitle2-txt,
     &__subtitle3-txt {
-      font-size: 0.9rem;
       padding-top: 1.5rem;
-      line-height: 1.25rem;
+      @include dsk-tablet-footer-copy;
     }
 
     &__email {
@@ -520,12 +504,17 @@ ul {
 
 // DESKTOP RESPONSIVE
 @media (min-width: 1280px) {
+  .header {
+    padding-left: 7vw;
+  }
+
+  .hero {
+    &__img-title {
+      padding-left: 3vw;
+    }
+  }
   .about {
     &__title {
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: $bandsite-black;
-      padding: 2.5rem 0rem 1.5rem 0rem;
       padding-left: 11vw;
     }
 
@@ -551,8 +540,8 @@ ul {
 
     &__paragraphs-container {
       width: 65%;
-      margin-right: auto;
-      margin-left: auto;
+      margin-right: 17vw;
+      margin-left: 17vw;
     }
   }
 
@@ -573,7 +562,7 @@ ul {
 
     &__headlines-social {
       width: 175px;
-      padding-right: 25vw;
+      padding-right: 24.3vw;
     }
 
     &__headlines-logo img {
