@@ -40,7 +40,7 @@ ul {
 
     &__title {
       text-align: center;
-      padding-bottom: $padding-global-default;
+      padding: 0.5rem;
     }
   }
 
@@ -87,7 +87,7 @@ ul {
       background-color: rgba($bandsite-black, 0.5);
     }
 
-    // Switched to vw units because I thought the 24px/1.5rem requested in the stylesheet looked too small in the 400px to 768px range
+    // Switched to vw units for the Hero image as the font scales better with the image vs the 24px/1.5rem requested in the stylesheet.
     &__img-title {
       font-size: 7vw;
       font-weight: 600;
@@ -239,7 +239,7 @@ ul {
       align-items: center;
       justify-content: center;
       padding-left: 4rem;
-      padding-bottom: 0.8rem;
+      padding-bottom: 0.7rem;
       transition: transform 0.3s ease;
     }
 
@@ -423,7 +423,7 @@ ul {
     }
 
     &__headlines-social {
-      padding: 0.8rem 9.8rem 1.125rem 0;
+      padding: 0.8rem 11.8rem 1.125rem 0;
     }
 
     &__social-img1 {
@@ -546,7 +546,7 @@ ul {
 
     &__headlines-social {
       width: 175px;
-      padding-right: 24.3vw;
+      padding-right: 26.7vw;
     }
 
     &__headlines-logo img {

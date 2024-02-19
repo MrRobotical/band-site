@@ -47,7 +47,7 @@ ul {
   }
   .header__title {
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 0.5rem;
   }
   .nav-bar {
     display: flex;
@@ -92,8 +92,8 @@ ul {
     color: #ffffff;
   }
   .about__title {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     font-weight: 600;
     color: #323232;
     padding: 1.5rem 1rem 1rem 1rem;
@@ -115,21 +115,21 @@ ul {
     padding-top: 1rem;
   }
   .about__text-title {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375;
     font-weight: 600;
     padding-left: 1rem;
     padding-bottom: 1rem;
   }
   .about__txt {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     font-weight: 400;
     padding: 0rem 1rem 1rem 1rem;
   }
   .photos__title {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     font-weight: 600;
     color: #323232;
     padding: 1.5rem 0rem 1rem 1rem;
@@ -170,14 +170,14 @@ ul {
     padding-left: 2rem;
   }
   .footer__subtitle1, .footer__subtitle2, .footer__subtitle3 {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375;
     font-weight: 600;
     padding: 1.5rem 0rem 0rem 1rem;
   }
   .footer__subtitle1-txt, .footer__subtitle2-txt, .footer__subtitle3-txt {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     font-weight: 400;
     padding: 1rem 0rem 0rem 1rem;
   }
@@ -195,8 +195,8 @@ ul {
     padding-top: 1rem;
   }
   .footer__copyright {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     font-weight: 400;
     padding: 4.58rem 0rem 1rem 1rem;
   }
@@ -211,7 +211,7 @@ ul {
     align-items: center;
     justify-content: center;
     padding-left: 4rem;
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.7rem;
     transition: transform 0.3s ease;
   }
   .header__title:hover {
@@ -268,8 +268,8 @@ ul {
     color: #ffffff;
   }
   .about__title {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
     font-weight: 600;
     color: #323232;
     padding: 2.25rem 0rem 1.5rem 0rem;
@@ -285,8 +285,8 @@ ul {
     width: 100%;
   }
   .about__quote {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 600;
     color: #323232;
     padding-top: 1rem;
@@ -298,8 +298,8 @@ ul {
     padding-top: 1rem;
   }
   .about__text-title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 600;
     padding-left: 12vw;
     margin-top: 2rem;
@@ -311,8 +311,8 @@ ul {
     margin-left: 12vw;
     line-height: 1.5rem;
     padding-bottom: 2rem;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.375rem;
     font-weight: 400;
   }
   .about__text-right {
@@ -326,8 +326,8 @@ ul {
     padding-top: 1rem;
   }
   .photos__title {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
     font-weight: 600;
     color: #323232;
     padding-top: 2rem;
@@ -373,7 +373,7 @@ ul {
     margin-left: 1rem;
   }
   .footer__headlines-social {
-    padding: 0.8rem 9.8rem 1.125rem 0;
+    padding: 0.8rem 11.8rem 1.125rem 0;
   }
   .footer__social-img1 {
     width: 1.6rem;
@@ -401,15 +401,15 @@ ul {
     padding-right: 1rem;
   }
   .footer__subtitle1, .footer__subtitle2, .footer__subtitle3 {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
     font-weight: 400;
     font-weight: 600;
   }
   .footer__subtitle1-txt, .footer__subtitle2-txt, .footer__subtitle3-txt {
     padding-top: 1.5rem;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
     font-weight: 400;
   }
   .footer__email {
@@ -467,7 +467,7 @@ ul {
   }
   .footer__headlines-social {
     width: 175px;
-    padding-right: 24.3vw;
+    padding-right: 26.7vw;
   }
   .footer__headlines-logo img {
     width: 7.5rem;
