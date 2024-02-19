@@ -36,11 +36,11 @@ ul {
 // MOBILE
 @media (max-width: 768px) {
   .header {
-    padding-top: 1rem;
+    padding-top: $padding-global-default;
 
     &__title {
       text-align: center;
-      padding-bottom: 1rem;
+      padding-bottom: $padding-global-default;
     }
   }
 
@@ -114,8 +114,7 @@ ul {
     &__img-photo {
       object-fit: cover;
       width: 95%;
-      padding-right: 1rem;
-      padding-left: 1rem;
+      padding: $padding-mobile-equal-right-left;
     }
 
     &__quote {
@@ -127,24 +126,18 @@ ul {
     }
 
     &__quote-ref {
-      padding-top: 1rem;
+      padding-top: $padding-global-default;
     }
 
     &__text-title {
       @include mobile-sub-header;
       padding-left: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    &__text-right {
-      padding-top: 1rem;
+      padding-bottom: $padding-global-default;
     }
 
     &__txt {
       @include mobile-body-copy;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      padding-bottom: 1rem;
+      padding: 0rem 1rem 1rem 1rem;
     }
   }
 
@@ -152,23 +145,19 @@ ul {
     &__title {
       @include mobile-sect-header;
       color: $bandsite-black;
-      padding-top: 1.5rem;
-      padding-left: 1rem;
-      padding-bottom: 1rem;
+      padding: 1.5rem 0rem 1rem 1rem;
     }
 
     &__container {
       position: relative;
       text-align: center;
-      padding-bottom: 1rem;
-      padding-left: 16px;
-      padding-right: 16px;
+      padding: 0rem 1rem 1rem 1rem;
     }
 
     &__container img {
       object-fit: cover;
       width: 99%;
-      padding-bottom: 1rem;
+      padding-bottom: $padding-global-default;
     }
   }
 
@@ -181,17 +170,16 @@ ul {
       font-size: 2rem;
       font-weight: 600;
       color: $white;
-      padding-top: 2rem;
-      padding-left: 1rem;
+      padding: 2rem 0rem 0rem 1rem;
     }
 
     &__headlines-social {
-      padding-top: 1rem;
+      padding-top: $padding-global-default;
     }
 
     &__social-img1 {
       width: 1.75rem;
-      padding-left: 1rem;
+      padding-left: $padding-global-default;
     }
 
     &__social-img2 {
@@ -208,15 +196,14 @@ ul {
     &__subtitle2,
     &__subtitle3 {
       @include mobile-sub-header;
-      padding-top: 1.5rem;
-      padding-left: 1rem;
+      padding: 1.5rem 0rem 0rem 1rem;
     }
 
     &__subtitle1-txt,
     &__subtitle2-txt,
     &__subtitle3-txt {
       @include mobile-footer-copy;
-      padding: 1rem 0 0 1rem;
+      padding: 1rem 0rem 0rem 1rem;
     }
 
     &__headlines-logo {
@@ -231,14 +218,12 @@ ul {
       display: inline-block;
       text-decoration: none;
       color: $white;
-      padding-top: 1rem;
+      padding-top: $padding-global-default;
     }
 
     &__copyright {
       @include mobile-footer-copy;
-      padding-top: 4.58rem;
-      padding-left: 1rem;
-      padding-bottom: 1rem;
+      padding: 4.58rem 0rem 1rem 1rem;
     }
   }
 }
@@ -248,7 +233,6 @@ ul {
   .header {
     padding-top: 1rem;
     display: flex;
-    // justify-content: left;
 
     &__title {
       display: flex;
@@ -282,7 +266,7 @@ ul {
       &--highlight {
         border-bottom: 4px solid white;
         font-weight: 600;
-        padding-bottom: 1rem;
+        padding-bottom: $padding-global-default;
       }
 
       &--inactive {
@@ -373,17 +357,17 @@ ul {
     }
 
     &__text-right {
-      padding-left: 1rem;
+      padding-left: $padding-global-default;
     }
 
     &__text-left {
-      padding-right: 1rem;
+      padding-right: $padding-global-default;
     }
   }
 
   .photos {
     background-color: $alabastor;
-    padding-top: 1rem;
+    padding-top: $padding-global-default;
 
     &__title {
       @include dsk-tablet-sect-header;
@@ -397,7 +381,7 @@ ul {
       display: flex;
       flex-wrap: wrap;
       width: 96%;
-      padding-bottom: 1rem;
+      padding-bottom: $padding-global-default;
       margin-left: auto;
       margin-right: auto;
     }
@@ -459,18 +443,18 @@ ul {
 
     &__headlines-logo img {
       width: 7.5rem;
-      padding-right: 1rem;
+      padding-right: $padding-global-default;
     }
 
     &__txt-columns-container {
       display: flex;
       justify-content: space-between;
       padding-top: 1.5rem;
-      padding-left: 1rem;
+      padding-left: $padding-global-default;
     }
 
     &__txt-column3 {
-      padding-right: 1rem;
+      padding-right: $padding-global-default;
     }
 
     &__subtitle1,
@@ -497,7 +481,7 @@ ul {
     &__copyright {
       font-size: 0.875rem;
       padding-top: 3.5rem;
-      padding-left: 1rem;
+      padding-left: $padding-global-default;
     }
   }
 }

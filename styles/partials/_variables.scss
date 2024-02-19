@@ -4,14 +4,13 @@ $silver: #afafaf;
 $white: #ffffff;
 
 // Secondary Colors
-$bandSite-DarkBlack: #000000;
+$bandsite-dark-black: #000000;
 $mercury: #e1e1e1;
 $alabastor: #fafafa;
 
+// Padding Global
+$padding-global-default: 1rem;
+
 //Pading Mobile
 $padding-mobile-after-headline: 1.5rem 1rem 1rem 1rem;
-
-//Pading Desktop & Tablet
-$dpad-b4-headlines: 3rem;
-$dpad-after-headlines: 2.25;
-$dpad-between-components: 2.25;
+$padding-mobile-equal-right-left: 0rem 1rem 0rem 1rem;

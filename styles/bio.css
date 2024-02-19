@@ -102,8 +102,7 @@ ul {
     -o-object-fit: cover;
        object-fit: cover;
     width: 95%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
   }
   .about__quote {
     color: #323232;
@@ -122,32 +121,23 @@ ul {
     padding-left: 1rem;
     padding-bottom: 1rem;
   }
-  .about__text-right {
-    padding-top: 1rem;
-  }
   .about__txt {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
   }
   .photos__title {
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
     color: #323232;
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem 0rem 1rem 1rem;
   }
   .photos__container {
     position: relative;
     text-align: center;
-    padding-bottom: 1rem;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0rem 1rem 1rem 1rem;
   }
   .photos__container img {
     -o-object-fit: cover;
@@ -162,8 +152,7 @@ ul {
     font-size: 2rem;
     font-weight: 600;
     color: #ffffff;
-    padding-top: 2rem;
-    padding-left: 1rem;
+    padding: 2rem 0rem 0rem 1rem;
   }
   .footer__headlines-social {
     padding-top: 1rem;
@@ -184,14 +173,13 @@ ul {
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
-    padding-top: 1.5rem;
-    padding-left: 1rem;
+    padding: 1.5rem 0rem 0rem 1rem;
   }
   .footer__subtitle1-txt, .footer__subtitle2-txt, .footer__subtitle3-txt {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    padding: 1rem 0 0 1rem;
+    padding: 1rem 0rem 0rem 1rem;
   }
   .footer__headlines-logo {
     position: absolute;
@@ -210,9 +198,7 @@ ul {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    padding-top: 4.58rem;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding: 4.58rem 0rem 1rem 1rem;
   }
 }
 @media (min-width: 769px) {
