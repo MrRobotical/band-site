@@ -145,6 +145,113 @@ ul {
     width: 99%;
     padding-bottom: 1rem;
   }
+  .comments__title {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    padding-left: 1rem;
+  }
+  .comments__container {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+  .comments__form-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+  }
+  .comments__form-label-name {
+    font-size: 14px;
+    padding-bottom: 4px;
+    font-weight: 600;
+    color: #afafaf;
+    font-family: Avenir, sans-serif;
+  }
+  .comments__form-label-input {
+    font-size: 14px;
+    padding-top: 24px;
+    font-weight: 600;
+    color: #afafaf;
+    font-family: Avenir, sans-serif;
+  }
+  .comments__form-input-field-name {
+    height: 36px;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+  }
+  .comments__form-input-field-comment {
+    height: 96px;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+  }
+  .comments__form-btn {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    height: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #323232;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 28px;
+    border-radius: 4px;
+    border: none;
+    font-family: Avenir, sans-serif;
+  }
+  .comments__posts {
+    margin-bottom: 2rem;
+  }
+  .comments__post-new, .comments__post-1, .comments__post-2, .comments__post-3 {
+    display: flex;
+  }
+  .comments__avatar-loggedIn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-image: url("/assets/images/Mohan-muruge.jpg");
+    background-size: cover;
+    margin-left: 5vw;
+    margin-right: 1rem;
+    margin-top: 18px;
+  }
+  .comments__name-date-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 13px;
+  }
+  .comments__avatarAnon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    background-size: cover;
+    margin-left: 5vw;
+    margin-right: 1rem;
+  }
+  .comments__username {
+    font-weight: 600;
+  }
+  .comments__date {
+    color: #afafaf;
+  }
+  .comments__body {
+    width: 70vw;
+  }
+  .comments__divider-lines {
+    width: 90%;
+    height: 3px;
+    background-color: #e1e1e1;
+    margin: auto;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
   .footer__headlines-container {
     position: relative;
   }
@@ -355,6 +462,125 @@ ul {
   .photo__container img:hover {
     filter: none;
     transform: scale(1.05);
+  }
+  .comments__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+    padding-left: 3.5vw;
+    padding-top: 2rem;
+  }
+  .comments__container {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .comments__form-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+  }
+  .comments__form-label-name {
+    font-size: 14px;
+    padding-bottom: 4px;
+    font-weight: 600;
+    color: #afafaf;
+    font-family: Avenir, sans-serif;
+  }
+  .comments__form-label-input {
+    font-size: 14px;
+    padding-top: 24px;
+    font-weight: 600;
+    color: #afafaf;
+    font-family: Avenir, sans-serif;
+  }
+  .comments__form-input-field-name {
+    height: 36px;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+  }
+  .comments__form-input-field-comment {
+    height: 96px;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+  }
+  .comments__form-btn-container {
+    display: flex;
+    justify-content: end;
+  }
+  .comments__form-btn {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 12rem;
+    height: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #323232;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 28px;
+    border-radius: 4px;
+    border: none;
+    font-family: Avenir, sans-serif;
+  }
+  .comments__posts {
+    margin-bottom: 5rem;
+    padding-left: 3vw;
+    padding-right: 5vw;
+  }
+  .comments__post-new, .comments__post-1, .comments__post-2, .comments__post-3 {
+    display: flex;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .comments__avatar-loggedIn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-image: url("/assets/images/Mohan-muruge.jpg");
+    background-size: cover;
+    margin-left: 5vw;
+    margin-right: 1rem;
+    margin-top: 18px;
+  }
+  .comments__name-date-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 13px;
+  }
+  .comments__avatarAnon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    background-size: cover;
+    margin-left: 5vw;
+    margin-right: 1rem;
+  }
+  .comments__username {
+    font-weight: 600;
+  }
+  .comments__date {
+    color: #afafaf;
+  }
+  .comments__body {
+    width: 70vw;
+  }
+  .comments__divider-lines {
+    width: 76vw;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: auto;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    transform: translateX(-2vw);
   }
   .footer {
     padding: 1.3rem 1.3rem;

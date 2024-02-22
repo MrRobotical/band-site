@@ -1,0 +1,941 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+
+// BASE STYLES
+body {
+  font-family: 'Avenir';
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+}
+
+.header {
+  &__logo {
+    width: 7.5rem;
+    cursor: pointer;
+  }
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// MOBILE
+@media (max-width: 768px) {
+  .header {
+    padding-top: $padding-global-default;
+
+    &__title {
+      text-align: center;
+      padding: 0.5rem;
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+
+    &__ul {
+      display: flex;
+      width: 100%;
+    }
+
+    &__item {
+      width: 50%;
+      text-align: center;
+
+      &--highlight {
+        border-bottom: 4px solid $white;
+        padding-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      &--inactive {
+        color: $mercury;
+      }
+    }
+  }
+
+  .hero__container {
+    position: relative;
+    width: 100vw;
+  }
+
+  .hero__shows-img-container {
+    width: 100%;
+    height: 500px;
+  }
+
+  .hero__shows-img-photo {
+    height: 100%;
+  }
+
+  .hero__souncdloud-container {
+    position: absolute;
+    top: 18rem;
+    left: 4rem;
+    width: 75%;
+    margin: auto;
+  }
+
+  .shows__heading-title-dsk-tablet {
+    display: none;
+  }
+
+  .hero {
+    &__img-container {
+      position: relative;
+      width: 100%;
+    }
+
+    &__img-photo {
+      width: 100%;
+      transform: scaleX(-1);
+    }
+
+    &__img-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 98.5%;
+      background-color: rgba($bandsite-black, 0.5);
+    }
+
+    // Switched to vw units for the Hero image as the font scales better with the image vs the 24px/1.5rem requested in the stylesheet.
+    &__img-title {
+      font-size: 7vw;
+      font-weight: 600;
+      position: absolute;
+      top: 31%;
+      left: 9%;
+      color: $white;
+    }
+
+    &__img-top-title {
+      font-size: 3.5vw;
+      font-weight: 400;
+      position: absolute;
+      top: 26%;
+      left: 9%;
+      color: $white;
+    }
+  }
+
+  // SHOWS SECTION SHOWS SECTION SHOWS SECTION SHOWS SECTION
+
+  .shows__title {
+    @include mobile-sect-header;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .shows__dsk-tablet-container {
+    margin-left: 1rem;
+  }
+
+  .shows__heading-title-mobile {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    color: $silver;
+    font-family: Avenir, sans-serif;
+  }
+
+  .shows__info {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .shows__buy-btn {
+    margin-bottom: 1.5rem;
+    width: 92vw;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: $bandsite-black;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 28px;
+    border-radius: 4px;
+    border: none;
+    font-family: Avenir, sans-serif;
+  }
+
+  .about {
+    &__title {
+      @include mobile-sect-header;
+      color: $bandsite-black;
+      padding: $padding-mobile-after-headline;
+    }
+
+    // &__img-container {
+    //   position: relative;
+    //   width: 100%;
+    //   text-align: center;
+    // }
+
+    &__img-photo {
+      object-fit: cover;
+      width: 95%;
+      padding: $padding-mobile-equal-right-left;
+    }
+
+    &__quote {
+      color: $bandsite-black;
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      padding: 1rem 1rem 1rem 1rem;
+    }
+
+    &__quote-ref {
+      padding-top: $padding-global-default;
+    }
+
+    &__text-title {
+      @include mobile-sub-header;
+      padding-left: 1rem;
+      padding-bottom: $padding-global-default;
+    }
+
+    &__txt {
+      @include mobile-body-copy;
+      padding: 0rem 1rem 1rem 1rem;
+    }
+  }
+
+  .photos {
+    &__title {
+      @include mobile-sect-header;
+      color: $bandsite-black;
+      padding: 1.5rem 0rem 1rem 1rem;
+    }
+
+    &__container {
+      position: relative;
+      text-align: center;
+      padding: 0rem 1rem 1rem 1rem;
+    }
+
+    &__container img {
+      object-fit: cover;
+      width: 99%;
+      padding-bottom: $padding-global-default;
+    }
+  }
+
+  .comments {
+    &__title {
+      @include mobile-sect-header;
+      padding-left: 1rem;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 1rem;
+    }
+
+    &__form-input-container {
+      display: flex;
+      flex-direction: column;
+      width: 70vw;
+    }
+
+    &__form-label-name {
+      font-size: 14px;
+      padding-bottom: 4px;
+      font-weight: 600;
+      color: $silver;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__form-label-input {
+      font-size: 14px;
+      padding-top: 24px;
+      font-weight: 600;
+      color: $silver;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__form-input-field-name {
+      height: 36px;
+      border-radius: 4px;
+      border: 1px solid $mercury;
+      background-color: $alabastor;
+    }
+
+    &__form-input-field-comment {
+      height: 96px;
+      border-radius: 4px;
+      border: 1px solid $mercury;
+      background-color: $alabastor;
+    }
+
+    &__form-btn {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      height: 40px;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background-color: $bandsite-black;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 28px;
+      border-radius: 4px;
+      border: none;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__posts {
+      margin-bottom: 2rem;
+    }
+
+    &__post-new,
+    &__post-1,
+    &__post-2,
+    &__post-3 {
+      display: flex;
+    }
+
+    &__avatar-loggedIn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-image: url('/assets/images/Mohan-muruge.jpg');
+      background-size: cover;
+      margin-left: 5vw;
+      margin-right: 1rem;
+      margin-top: 18px;
+    }
+
+    &__name-date-container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 13px;
+    }
+
+    &__avatarAnon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      // background-image: url('/assets/images/Mohan-muruge.jpg');
+      background-color: #e1e1e1;
+      background-size: cover;
+      margin-left: 5vw;
+      margin-right: 1rem;
+      // margin-top: 18px;
+      // flex-shrink: 0; //Why was this neccesary?
+    }
+
+    &__username {
+      font-weight: 600;
+    }
+
+    &__date {
+      color: $silver;
+    }
+
+    &__body {
+      width: 70vw;
+    }
+
+    &__divider-lines {
+      width: 90%;
+      height: 3px;
+      background-color: $mercury;
+      margin: auto;
+      margin-bottom: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  .footer {
+    &__headlines-container {
+      position: relative;
+    }
+
+    &__headlines-top-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $white;
+      padding: 2rem 0rem 0rem 1rem;
+    }
+
+    &__headlines-social {
+      padding-top: $padding-global-default;
+    }
+
+    &__social-img1 {
+      width: 1.75rem;
+      padding-left: $padding-global-default;
+    }
+
+    &__social-img2 {
+      width: 1.1rem;
+      padding-left: 2rem;
+    }
+
+    &__social-img3 {
+      width: 1.75rem;
+      padding-left: 2rem;
+    }
+
+    &__subtitle1,
+    &__subtitle2,
+    &__subtitle3 {
+      @include mobile-sub-header;
+      padding: 1.5rem 0rem 0rem 1rem;
+    }
+
+    &__subtitle1-txt,
+    &__subtitle2-txt,
+    &__subtitle3-txt {
+      @include mobile-footer-copy;
+      padding: 1rem 0rem 0rem 1rem;
+    }
+
+    &__headlines-logo {
+      position: absolute;
+      top: 34rem;
+      left: 0.05rem;
+      color: $white;
+      padding: 1rem 0 0 1rem;
+    }
+
+    &__email {
+      display: inline-block;
+      text-decoration: none;
+      color: $white;
+      padding-top: $padding-global-default;
+    }
+
+    &__copyright {
+      @include mobile-footer-copy;
+      padding: 4.58rem 0rem 1rem 1rem;
+    }
+  }
+}
+
+// TABLET RESPONSIVE
+@media (min-width: 769px) {
+  .header {
+    padding-top: 1rem;
+    display: flex;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 4rem;
+      padding-bottom: 0.7rem;
+      transition: transform 0.3s ease;
+    }
+
+    &__title:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+
+    &__ul {
+      display: flex;
+    }
+
+    &__item {
+      font-size: 1.125rem;
+      text-align: center;
+      padding-top: 0.6rem;
+      margin-left: 4rem;
+      transition: transform 0.3s ease;
+
+      &--highlight {
+        border-bottom: 4px solid white;
+        font-weight: 600;
+        padding-bottom: $padding-global-default;
+      }
+
+      &--inactive {
+        color: $mercury;
+      }
+    }
+
+    &__item:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  .hero {
+    &__img-container {
+      position: relative;
+      width: 100%;
+    }
+
+    &__img-photo {
+      object-fit: cover;
+      width: 100%;
+      max-height: 500px;
+    }
+
+    // &__img-overlay {
+    //   position: absolute;
+    //   top: 0;
+    //   width: 100%;
+    //   height: 98.5%;
+    //   background-color: rgba($bandsite-black, 0.5);
+    // }
+
+    &__img-title {
+      position: absolute;
+      top: 40%;
+      left: 8%;
+      font-size: 4.25rem;
+      font-weight: 600;
+      color: $white;
+    }
+  }
+
+  // SHOWS SECTION // SHOWS SECTION // SHOWS SECTION // SHOWS SECTION
+
+  .shows__heading-title-mobile {
+    display: none;
+  }
+
+  .shows__dsk-tablet-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .shows__heading-title-dsk-tablet {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .about {
+    &__title {
+      @include dsk-tablet-sect-header;
+      color: $bandsite-black;
+      padding: 2.25rem 0rem 1.5rem 0rem;
+      padding-left: 4vw;
+    }
+
+    &__img-container {
+      width: 80%;
+      margin: auto;
+    }
+
+    &__img-photo {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__quote {
+      @include dsk-tablet-subheader;
+      color: $bandsite-black;
+      padding-top: 1rem;
+      padding-left: 11vw;
+      width: 75%;
+    }
+
+    &__quote-ref {
+      font-size: 1.125rem;
+      padding-top: 1rem;
+    }
+
+    &__text-title {
+      @include dsk-tablet-subheader;
+      padding-left: 12vw;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__paragraphs-container {
+      display: flex;
+      margin-right: 12vw;
+      margin-left: 12vw;
+      line-height: 1.5rem;
+      padding-bottom: 2rem;
+      @include dsk-tablet-body-copy;
+    }
+
+    &__text-right {
+      padding-left: $padding-global-default;
+    }
+
+    &__text-left {
+      padding-right: $padding-global-default;
+    }
+  }
+
+  .photos {
+    background-color: $alabastor;
+    padding-top: $padding-global-default;
+
+    &__title {
+      @include dsk-tablet-sect-header;
+      color: $bandsite-black;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      padding-left: 3vw;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 96%;
+      padding-bottom: $padding-global-default;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .photo__container {
+    width: 30%;
+    margin: auto;
+
+    img {
+      width: 100%;
+      margin-bottom: 8%;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    img:hover {
+      filter: none;
+      transform: scale(1.05);
+    }
+  }
+
+  //COMMENTS //COMMENTS //COMMENTS //COMMENTS
+
+  .comments {
+    &__title {
+      @include dsk-tablet-sect-header;
+      padding-left: 3.5vw;
+      padding-top: 2rem;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 1rem;
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
+
+    &__form-input-container {
+      display: flex;
+      flex-direction: column;
+      width: 70vw;
+    }
+
+    &__form-label-name {
+      font-size: 14px;
+      padding-bottom: 4px;
+      font-weight: 600;
+      color: $silver;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__form-label-input {
+      font-size: 14px;
+      padding-top: 24px;
+      font-weight: 600;
+      color: $silver;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__form-input-field-name {
+      height: 36px;
+      border-radius: 4px;
+      border: 1px solid $mercury;
+      background-color: $alabastor;
+    }
+
+    &__form-input-field-comment {
+      height: 96px;
+      border-radius: 4px;
+      border: 1px solid $mercury;
+      background-color: $alabastor;
+    }
+
+    &__form-btn-container {
+      display: flex;
+      justify-content: end;
+    }
+
+    &__form-btn {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      width: 12rem;
+      height: 40px;
+      // margin-left: 53.8vw;
+      // margin-right: 3vw;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background-color: $bandsite-black;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 28px;
+      border-radius: 4px;
+      border: none;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__posts {
+      margin-bottom: 5rem;
+      padding-left: 3vw;
+      padding-right: 5vw;
+    }
+
+    &__post-new,
+    &__post-1,
+    &__post-2,
+    &__post-3 {
+      display: flex;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+
+    &__avatar-loggedIn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-image: url('/assets/images/Mohan-muruge.jpg');
+      background-size: cover;
+      margin-left: 5vw;
+      margin-right: 1rem;
+      margin-top: 18px;
+    }
+
+    &__name-date-container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 13px;
+    }
+
+    &__avatarAnon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      // background-image: url('/assets/images/Mohan-muruge.jpg');
+      background-color: #e1e1e1;
+      background-size: cover;
+      margin-left: 5vw;
+      margin-right: 1rem;
+      // margin-top: 18px;
+      // flex-shrink: 0; //Why was this neccesary?
+    }
+
+    &__username {
+      font-weight: 600;
+    }
+
+    &__date {
+      color: $silver;
+    }
+
+    &__body {
+      width: 70vw;
+    }
+
+    &__divider-lines {
+      width: 76vw;
+      height: 1px;
+      background-color: $mercury;
+      margin: auto;
+      margin-bottom: 16px;
+      margin-top: 16px;
+      transform: translateX(-2vw);
+    }
+  }
+
+  .footer {
+    padding: 1.3rem 1.3rem;
+    position: relative;
+
+    &__headlines-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    &__headlines-top-title {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: $white;
+      margin-left: 1rem;
+    }
+
+    &__headlines-social {
+      padding: 0.8rem 11.8rem 1.125rem 0;
+    }
+
+    &__social-img1 {
+      width: 1.6rem;
+      padding-left: 0.5rem;
+    }
+
+    &__social-img2 {
+      width: 0.93rem;
+      margin-left: 2rem;
+    }
+
+    &__social-img3 {
+      width: 1.75rem;
+      margin-left: 2rem;
+    }
+
+    &__headlines-logo img {
+      width: 7.5rem;
+      padding-right: $padding-global-default;
+    }
+
+    &__txt-columns-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      padding-left: $padding-global-default;
+    }
+
+    &__txt-column3 {
+      padding-right: $padding-global-default;
+    }
+
+    &__subtitle1,
+    &__subtitle2,
+    &__subtitle3 {
+      @include dsk-tablet-footer-copy;
+      font-weight: 600;
+    }
+
+    &__subtitle1-txt,
+    &__subtitle2-txt,
+    &__subtitle3-txt {
+      padding-top: 1.5rem;
+      @include dsk-tablet-footer-copy;
+    }
+
+    &__email {
+      display: inline-block;
+      text-decoration: none;
+      color: $white;
+      padding-top: 1.5rem;
+    }
+
+    &__copyright {
+      font-size: 0.875rem;
+      padding-top: 3.5rem;
+      padding-left: $padding-global-default;
+    }
+  }
+}
+
+// DESKTOP RESPONSIVE
+@media (min-width: 1280px) {
+  .header {
+    padding-left: 7vw;
+  }
+
+  .hero {
+    &__img-title {
+      padding-left: 3vw;
+    }
+  }
+  .about {
+    &__title {
+      padding-left: 11vw;
+    }
+
+    &__img-container {
+      position: relative;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__img-photo {
+      object-fit: cover;
+      width: 70%;
+    }
+
+    &__quote {
+      padding-left: 17vw;
+      width: 50%;
+    }
+
+    &__text-title {
+      padding-left: 17vw;
+    }
+
+    &__paragraphs-container {
+      width: 65%;
+      margin-right: 17vw;
+      margin-left: 17vw;
+    }
+  }
+
+  .photos {
+    &__title {
+      padding-left: 11vw;
+    }
+
+    &__container {
+      width: 80%;
+    }
+  }
+
+  .footer {
+    &__headlines-container {
+      padding-left: 7rem;
+    }
+
+    &__headlines-social {
+      width: 175px;
+      padding-right: 26.7vw;
+    }
+
+    &__headlines-logo img {
+      width: 7.5rem;
+      padding-right: 8rem;
+    }
+
+    &__txt-columns-container {
+      padding-left: 8.3rem;
+    }
+
+    &__txt-column3 {
+      padding-right: 25vw;
+    }
+
+    &__copyright {
+      padding-left: 8.3rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
