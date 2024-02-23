@@ -29,16 +29,19 @@
   .hero {
     &__container {
       position: relative;
-      width: 100vw;
+      width: 100%;
     }
 
     &__shows-img-container {
       width: 100%;
-      height: 500px;
     }
 
     &__shows-img-photo {
-      height: 100%;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: bottom;
+      transform: scaleX(-1);
     }
 
     &__img-overlay {
@@ -51,27 +54,28 @@
 
     &__souncdloud-container {
       position: absolute;
-      top: 18rem;
-      left: 4rem;
-      width: 75%;
-      margin: auto;
+      top: 14rem;
+      left: 10vw;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     // Switched to vw units for the Hero image as the font scales better with the image vs the 24px/1.5rem requested in the stylesheet.
     &__img-title {
-      font-size: 7vw;
+      font-size: 2rem;
       font-weight: 600;
       position: absolute;
-      top: 31%;
+      top: 26%;
       left: 9%;
       color: $white;
     }
 
     &__img-top-title {
-      font-size: 3.5vw;
+      font-size: 1rem;
       font-weight: 400;
       position: absolute;
-      top: 26%;
+      top: 22%;
       left: 9%;
       color: $white;
     }
@@ -170,16 +174,18 @@
       font-size: 5rem;
       font-weight: 600;
       position: absolute;
-      top: 22%;
+      top: 30%;
       left: 6.5vw;
       color: $white;
+      display: flex;
+      flex-direction: column;
     }
 
     &__img-top-title {
       font-size: 1.75rem;
       font-weight: 600;
       position: absolute;
-      top: 16%;
+      top: 22%;
       left: 6.8vw;
       color: $white;
     }
@@ -206,7 +212,7 @@
     &__title {
       @include dsk-tablet-sect-header;
       margin-top: 3rem;
-      margin-left: 1rem;
+      margin-left: 1vw;
       margin-bottom: 2.5rem;
     }
 
@@ -218,7 +224,6 @@
       color: $silver;
       font-family: Avenir, sans-serif;
       width: 175px;
-      border: 2px solid red;
     }
 
     &__headings-dsk-tablet-dummy-div {
@@ -230,25 +235,22 @@
       font-weight: 600;
       width: 175px;
       padding-top: 1rem;
-      border: 2px solid red;
     }
 
     &__btn-container {
       width: 175px;
-      border: 2px solid red;
       margin-bottom: 1rem;
     }
 
     &__buy-btn {
       margin-bottom: 1.5rem;
       width: 175px;
-      padding-top: 8px;
-      padding-bottom: 8px;
+      padding-top: 14px;
+      padding-bottom: 10px;
       background-color: $bandsite-black;
       color: white;
       font-weight: 600;
       font-size: 1.2rem;
-      line-height: 28px;
       border-radius: 4px;
       border: none;
       font-family: Avenir, sans-serif;
@@ -259,8 +261,8 @@
       height: 2px;
       background-color: $mercury;
       margin: auto;
-      margin-bottom: 8px;
-      margin-top: 8px;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
     }
   }
 }
@@ -269,7 +271,43 @@
 @media (min-width: 1280px) {
   .hero {
     &__img-title {
-      padding-left: 3vw;
+      font-size: 3rem;
+      font-weight: 600;
+      position: absolute;
+      top: 40%;
+      left: 8.5vw;
+      color: $white;
+      display: flex;
+      flex-direction: column;
     }
+
+    &__img-top-title {
+      font-size: 1rem;
+      font-weight: 600;
+      position: absolute;
+      top: 34%;
+      left: 11.5vw;
+      color: $white;
+    }
+
+    &__souncdloud-container {
+      position: absolute;
+      top: 35%;
+      left: 50vw;
+      width: 400px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .shows__container {
+    width: 60vw;
+    margin-left: 15vw;
+  }
+
+  .shows__title {
+    position: relative;
+    top: 4rem;
+    left: 0vw;
   }
 }

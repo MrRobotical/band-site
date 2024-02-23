@@ -16,9 +16,67 @@ let commentsArr = [
   },
 ];
 
+window.addEventListener('load', function (event) {
+  // Insert my code for dynamically loding the comments here
+  commentsArr.forEach((comment) => {
+    //First El to append to:
+    const createJsCommentsParentContainer =
+      document.querySelector('.comments__posts');
+
+    //Avatar Container via JS
+    const createJsAvatarContainer = document.createElement('div');
+    createJsAvatarContainer.classList.add('comments__post-new');
+    createJsCommentsParentContainer.prepend(createJsAvatarContainer);
+
+    // Avatar El via JS
+    const createAvatarOutputEl = document.createElement('div');
+    createAvatarOutputEl.classList.add('comments__avatar-loggedIn');
+    createJsAvatarContainer.prepend(createAvatarOutputEl);
+
+    //Comments Body Container via JS
+    const createJsbodyContainer = document.createElement('div');
+    createJsbodyContainer.classList.add('comments__body');
+    createJsAvatarContainer.appendChild(createJsbodyContainer);
+
+    //Name - Date Container via JS
+    const createJsNameDateContainer = document.createElement('div');
+    createJsNameDateContainer.classList.add('comments__name-date-container');
+    createJsbodyContainer.appendChild(createJsNameDateContainer);
+
+    // Name El via JS
+    const createNameOutputEl = document.createElement('p');
+    createNameOutputEl.classList.add('comments__username');
+    createJsNameDateContainer.appendChild(createNameOutputEl);
+    createNameOutputEl.innerText = comment.name;
+
+    // Date
+    const createDateOutputEl = document.createElement('p');
+    createDateOutputEl.classList.add('comments__date');
+    createJsNameDateContainer.appendChild(createDateOutputEl);
+    createDateOutputEl.innerText = comment.timestamp;
+
+    //Comments
+    const createCommentOutputEl = document.createElement('p');
+    createCommentOutputEl.classList.add('comments__txt');
+    createJsbodyContainer.appendChild(createCommentOutputEl);
+    createCommentOutputEl.innerText = comment.text;
+
+    // Divider Line -
+    const dividerLinesEl = document.createElement('div');
+    dividerLinesEl.classList.add('comments__divider-lines');
+    createJsCommentsParentContainer.prepend(dividerLinesEl);
+  });
+});
+
 // My Form event listener
-document.querySelector('#form').addEventListener('submit', function (e) {
-  e.preventDefault();
+// My Form event listener
+// My Form event listener
+// My Form event listener
+// My Form event listener
+// My Form event listener
+
+document.querySelector('#form').addEventListener('submit', function (event) {
+  event.preventDefault();
 
   const name = document.querySelector('#name').value;
   const comment = document.querySelector('#comment').value;
@@ -35,8 +93,6 @@ document.querySelector('#form').addEventListener('submit', function (e) {
     timestamp: timestamp,
     text: comment,
   };
-
-  // '11/02/2023',
 
   commentsArr.push(newComment);
   console.log(commentsArr);
