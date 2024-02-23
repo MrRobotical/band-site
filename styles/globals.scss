@@ -1,0 +1,312 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+
+// BASE STYLES
+body {
+  font-family: 'Avenir';
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+}
+
+.header {
+  &__logo {
+    width: 7.5rem;
+    cursor: pointer;
+  }
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// MOBILE
+@media (max-width: 768px) {
+  .header {
+    padding-top: $padding-global-default;
+
+    &__title {
+      text-align: center;
+      padding: 0.5rem;
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+
+    &__ul {
+      display: flex;
+      width: 100%;
+    }
+
+    &__item {
+      width: 50%;
+      text-align: center;
+
+      &--highlight {
+        border-bottom: 4px solid $white;
+        padding-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      &--inactive {
+        color: $mercury;
+      }
+    }
+  }
+
+  .footer {
+    &__headlines-container {
+      position: relative;
+    }
+
+    &__headlines-top-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $white;
+      padding: 2rem 0rem 0rem 1rem;
+    }
+
+    &__headlines-social {
+      padding-top: $padding-global-default;
+    }
+
+    &__social-img1 {
+      width: 1.75rem;
+      padding-left: $padding-global-default;
+    }
+
+    &__social-img2 {
+      width: 1.1rem;
+      padding-left: 2rem;
+    }
+
+    &__social-img3 {
+      width: 1.75rem;
+      padding-left: 2rem;
+    }
+
+    &__subtitle1,
+    &__subtitle2,
+    &__subtitle3 {
+      @include mobile-sub-header;
+      padding: 1.5rem 0rem 0rem 1rem;
+    }
+
+    &__subtitle1-txt,
+    &__subtitle2-txt,
+    &__subtitle3-txt {
+      @include mobile-footer-copy;
+      padding: 1rem 0rem 0rem 1rem;
+    }
+
+    &__headlines-logo {
+      position: absolute;
+      top: 34rem;
+      left: 0.05rem;
+      color: $white;
+      padding: 1rem 0 0 1rem;
+    }
+
+    &__email {
+      display: inline-block;
+      text-decoration: none;
+      color: $white;
+      padding-top: $padding-global-default;
+    }
+
+    &__copyright {
+      @include mobile-footer-copy;
+      padding: 4.58rem 0rem 1rem 1rem;
+    }
+  }
+}
+
+// TABLET RESPONSIVE
+@media (min-width: 769px) {
+  .header {
+    padding-top: 1rem;
+    display: flex;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 4rem;
+      padding-bottom: 0.7rem;
+      transition: transform 0.3s ease;
+    }
+
+    &__title:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+
+    &__ul {
+      display: flex;
+    }
+
+    &__item {
+      font-size: 1.125rem;
+      text-align: center;
+      padding-top: 0.6rem;
+      margin-left: 4rem;
+      transition: transform 0.3s ease;
+
+      &--highlight {
+        border-bottom: 4px solid white;
+        font-weight: 600;
+        padding-bottom: $padding-global-default;
+      }
+
+      &--inactive {
+        color: $mercury;
+      }
+    }
+
+    &__item:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  .footer {
+    padding: 1.3rem 1.3rem;
+    position: relative;
+
+    &__headlines-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    &__headlines-top-title {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: $white;
+      margin-left: 1rem;
+    }
+
+    &__headlines-social {
+      padding: 0.8rem 11.8rem 1.125rem 0;
+    }
+
+    &__social-img1 {
+      width: 1.6rem;
+      padding-left: 0.5rem;
+    }
+
+    &__social-img2 {
+      width: 0.93rem;
+      margin-left: 2rem;
+    }
+
+    &__social-img3 {
+      width: 1.75rem;
+      margin-left: 2rem;
+    }
+
+    &__headlines-logo img {
+      width: 7.5rem;
+      padding-right: $padding-global-default;
+    }
+
+    &__txt-columns-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      padding-left: $padding-global-default;
+    }
+
+    &__txt-column3 {
+      padding-right: $padding-global-default;
+    }
+
+    &__subtitle1,
+    &__subtitle2,
+    &__subtitle3 {
+      @include dsk-tablet-footer-copy;
+      font-weight: 600;
+    }
+
+    &__subtitle1-txt,
+    &__subtitle2-txt,
+    &__subtitle3-txt {
+      padding-top: 1.5rem;
+      @include dsk-tablet-footer-copy;
+    }
+
+    &__email {
+      display: inline-block;
+      text-decoration: none;
+      color: $white;
+      padding-top: 1.5rem;
+    }
+
+    &__copyright {
+      font-size: 0.875rem;
+      padding-top: 3.5rem;
+      padding-left: $padding-global-default;
+    }
+  }
+}
+
+// DESKTOP RESPONSIVE
+@media (min-width: 1280px) {
+  .header {
+    padding-left: 7vw;
+  }
+
+  .hero {
+    &__img-title {
+      padding-left: 3vw;
+    }
+  }
+
+  .footer {
+    &__headlines-container {
+      padding-left: 7rem;
+    }
+
+    &__headlines-social {
+      width: 175px;
+      padding-right: 26.7vw;
+    }
+
+    &__headlines-logo img {
+      width: 7.5rem;
+      padding-right: 8rem;
+    }
+
+    &__txt-columns-container {
+      padding-left: 8.3rem;
+    }
+
+    &__txt-column3 {
+      padding-right: 25vw;
+    }
+
+    &__copyright {
+      padding-left: 8.3rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
