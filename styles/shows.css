@@ -72,7 +72,7 @@
     margin-left: 1rem;
     margin-bottom: 2.5rem;
   }
-  .shows__dsk-tablet-container {
+  .shows__info-container {
     margin-left: 1rem;
   }
   .shows__heading-title-mobile {
@@ -83,13 +83,24 @@
     color: #afafaf;
     font-family: Avenir, sans-serif;
   }
-  .shows__info {
+  .shows__info-date {
     font-weight: 600;
-    margin-bottom: 1rem;
+    width: 175px;
+    margin-bottom: 1.5rem;
+  }
+  .shows__info-venue {
+    font-weight: 600;
+    width: 175px;
+    margin-bottom: 1.5rem;
+  }
+  .shows__info-location {
+    font-weight: 600;
+    width: 175px;
+    margin-bottom: 1.5rem;
   }
   .shows__buy-btn {
     margin-bottom: 1.5rem;
-    width: 92vw;
+    width: 90vw;
     padding-top: 8px;
     padding-bottom: 8px;
     background-color: #323232;
@@ -157,7 +168,7 @@
     display: flex;
     justify-content: space-around;
   }
-  .shows__dsk-tablet-container {
+  .shows__info-container {
     display: flex;
     justify-content: space-around;
     height: 50px;
@@ -183,14 +194,20 @@
     visibility: hidden;
     width: 175px;
   }
-  .shows__info {
+  .shows__info-date {
     font-weight: 600;
     width: 175px;
     padding-top: 1rem;
   }
-  .shows__btn-container {
+  .shows__info-venue {
+    font-weight: 600;
     width: 175px;
-    margin-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .shows__info-location {
+    font-weight: 600;
+    width: 175px;
+    padding-top: 1rem;
   }
   .shows__buy-btn {
     margin-bottom: 1.5rem;
@@ -241,7 +258,8 @@
     margin-right: auto;
     margin-left: auto;
   }
-  .shows__container {
+  .shows__container,
+  .shows__data-container {
     width: 60vw;
     margin-left: 15vw;
   }

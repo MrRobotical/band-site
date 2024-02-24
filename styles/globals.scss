@@ -53,9 +53,15 @@ ul {
       width: 100%;
     }
 
+    &__link {
+      text-decoration: none;
+      color: $white;
+    }
+
     &__item {
       width: 50%;
       text-align: center;
+      color: $white;
 
       &--highlight {
         border-bottom: 4px solid $white;
@@ -162,6 +168,11 @@ ul {
 
     &__ul {
       display: flex;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $white;
     }
 
     &__item {

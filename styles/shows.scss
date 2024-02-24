@@ -95,7 +95,11 @@
       margin-bottom: 2.5rem;
     }
 
-    &__dsk-tablet-container {
+    // &__dsk-tablet-container {
+    //   margin-left: 1rem;
+    // }
+
+    &__info-container {
       margin-left: 1rem;
     }
 
@@ -108,14 +112,32 @@
       font-family: Avenir, sans-serif;
     }
 
-    &__info {
+    // &__info {
+    //   font-weight: 600;
+    //   margin-bottom: 1rem;
+    // }
+
+    &__info-date {
       font-weight: 600;
-      margin-bottom: 1rem;
+      width: 175px;
+      margin-bottom: 1.5rem;
+    }
+
+    &__info-venue {
+      font-weight: 600;
+      width: 175px;
+      margin-bottom: 1.5rem;
+    }
+
+    &__info-location {
+      font-weight: 600;
+      width: 175px;
+      margin-bottom: 1.5rem;
     }
 
     &__buy-btn {
       margin-bottom: 1.5rem;
-      width: 92vw;
+      width: 90vw;
       padding-top: 8px;
       padding-bottom: 8px;
       background-color: $bandsite-black;
@@ -203,7 +225,7 @@
       justify-content: space-around;
     }
 
-    &__dsk-tablet-container {
+    &__info-container {
       display: flex;
       justify-content: space-around;
       height: 50px;
@@ -231,16 +253,28 @@
       width: 175px;
     }
 
-    &__info {
+    &__info-date {
       font-weight: 600;
       width: 175px;
       padding-top: 1rem;
     }
 
-    &__btn-container {
+    &__info-venue {
+      font-weight: 600;
       width: 175px;
-      margin-bottom: 1rem;
+      padding-top: 1rem;
     }
+
+    &__info-location {
+      font-weight: 600;
+      width: 175px;
+      padding-top: 1rem;
+    }
+
+    // &__btn-container {
+    //   width: 175px;
+    //   margin-bottom: 1rem;
+    // }
 
     &__buy-btn {
       margin-bottom: 1.5rem;
@@ -300,7 +334,8 @@
     }
   }
 
-  .shows__container {
+  .shows__container,
+  .shows__data-container {
     width: 60vw;
     margin-left: 15vw;
   }

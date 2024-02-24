@@ -57,9 +57,14 @@ ul {
     display: flex;
     width: 100%;
   }
+  .nav-bar__link {
+    text-decoration: none;
+    color: #ffffff;
+  }
   .nav-bar__item {
     width: 50%;
     text-align: center;
+    color: #ffffff;
   }
   .nav-bar__item--highlight {
     border-bottom: 4px solid #ffffff;
@@ -147,6 +152,10 @@ ul {
   }
   .nav-bar__ul {
     display: flex;
+  }
+  .nav-bar__link {
+    text-decoration: none;
+    color: #ffffff;
   }
   .nav-bar__item {
     font-size: 1.125rem;
