@@ -18,6 +18,7 @@ let commentsArr = [
 
 window.addEventListener('load', function (event) {
   // Insert my code for dynamically loding the comments here
+
   commentsArr.forEach((comment) => {
     //First El to append to:
     const createJsCommentsParentContainer =
@@ -30,7 +31,7 @@ window.addEventListener('load', function (event) {
 
     // Avatar El via JS
     const createAvatarOutputEl = document.createElement('div');
-    createAvatarOutputEl.classList.add('comments__avatar-loggedIn');
+    createAvatarOutputEl.classList.add('comments__avatarAnon');
     createJsAvatarContainer.prepend(createAvatarOutputEl);
 
     //Comments Body Container via JS

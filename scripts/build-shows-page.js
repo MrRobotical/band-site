@@ -136,5 +136,23 @@ window.addEventListener('load', function (event) {
     const dividerLine = document.createElement('div');
     dividerLine.classList.add('shows__divider-lines');
     showsInfoContainer.insertAdjacentElement('afterend', dividerLine);
+
+    // Selected Show Styling
+    buyButton.addEventListener('click', function () {
+      // Remove any selected stylings
+      removeSelectedClass();
+      // Add the selected class to the clicked item
+      showsInfoContainer.classList.add('shows__info-container--selected');
+    });
   });
 });
+
+// Remove the selected class from all items
+function removeSelectedClass() {
+  const selectedState = document.querySelector(
+    '.shows__info-container--selected'
+  );
+  if (selectedState) {
+    selectedState.classList.remove('shows__info-container--selected');
+  }
+}

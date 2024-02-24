@@ -45,6 +45,16 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .hero__dsktop-title {
+    display: none;
+  }
+  .hero__mobile-title {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero__title-break {
+    display: block;
+  }
   .hero__img-title {
     font-size: 2rem;
     font-weight: 600;
@@ -89,12 +99,12 @@
     margin-bottom: 1.5rem;
   }
   .shows__info-venue {
-    font-weight: 600;
+    font-weight: 400;
     width: 175px;
     margin-bottom: 1.5rem;
   }
   .shows__info-location {
-    font-weight: 600;
+    font-weight: 400;
     width: 175px;
     margin-bottom: 1.5rem;
   }
@@ -143,6 +153,9 @@
     height: 98.5%;
     background-color: rgba(50, 50, 50, 0.5);
   }
+  .hero__mobile-title {
+    display: none;
+  }
   .hero__img-title {
     font-size: 5rem;
     font-weight: 600;
@@ -167,11 +180,23 @@
   .shows__heading-title-dsk-tablet {
     display: flex;
     justify-content: space-around;
+    width: 90%;
+    margin: auto;
   }
   .shows__info-container {
     display: flex;
     justify-content: space-around;
     height: 50px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    width: 90%;
+    margin: auto;
+  }
+  .shows__info-container:hover {
+    background-color: #fafafa;
+  }
+  .shows__info-container--selected {
+    background-color: #e1e1e1 !important;
   }
   .shows__title {
     font-size: 2.25rem;
@@ -227,8 +252,6 @@
     height: 2px;
     background-color: #e1e1e1;
     margin: auto;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
   }
 }
 @media (min-width: 1280px) {
