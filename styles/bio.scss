@@ -356,7 +356,6 @@
   }
 
   //COMMENTS //COMMENTS //COMMENTS //COMMENTS
-
   .comments {
     &__title {
       @include dsk-tablet-sect-header;
@@ -380,30 +379,30 @@
     }
 
     &__form-label-name {
-      font-size: 14px;
-      padding-bottom: 4px;
+      font-size: 0.875rem;
+      padding-bottom: 0.25rem;
       font-weight: 600;
       color: $silver;
       font-family: Avenir, sans-serif;
     }
 
     &__form-label-input {
-      font-size: 14px;
-      padding-top: 24px;
+      font-size: 0.875rem;
+      padding-top: 1.5rem;
       font-weight: 600;
       color: $silver;
       font-family: Avenir, sans-serif;
     }
 
     &__form-input-field-name {
-      height: 36px;
+      height: 2.25rem;
       border-radius: 4px;
       border: 1px solid $mercury;
       background-color: $alabastor;
     }
 
     &__form-input-field-comment {
-      height: 96px;
+      height: 6rem;
       border-radius: 4px;
       border: 1px solid $mercury;
       background-color: $alabastor;
@@ -416,22 +415,22 @@
     }
 
     &__form-btn {
+      color: white;
+      background-color: $bandsite-black;
+      font-size: 1.2rem;
+      font-family: Avenir, sans-serif;
+      line-height: 1.75rem;
+      font-weight: 600;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
       width: 12rem;
-      height: 40px;
-      padding-left: 32px;
-      padding-right: 32px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      background-color: $bandsite-black;
-      color: white;
-      font-weight: 600;
-      font-size: 1.2rem;
-      line-height: 28px;
+      height: 2.5rem;
       border-radius: 4px;
       border: none;
-      font-family: Avenir, sans-serif;
     }
 
     &__posts {
@@ -440,25 +439,20 @@
       padding-right: 5vw;
     }
 
-    &__post-new,
-    &__post-0,
-    &__post-1,
-    &__post-2,
-    &__post-3 {
+    &__post-new {
       display: flex;
       padding-bottom: 1rem;
       padding-top: 1rem;
     }
 
     &__avatar-loggedIn {
-      width: 42px;
-      height: 42px;
+      width: 2.625rem;
+      height: 2.625rem;
       border-radius: 50%;
       background-image: url('/assets/images/Mohan-muruge.jpg');
       background-size: cover;
       margin-left: 5vw;
       margin-right: 1rem;
-      // margin-top: 18px;
     }
 
     &__name-date-container {
@@ -468,8 +462,8 @@
     }
 
     &__avatarAnon {
-      width: 42px;
-      height: 42px;
+      width: 2.625rem;
+      height: 2.625rem;
       border-radius: 50%;
       background-color: #e1e1e1;
       background-size: cover;
@@ -494,8 +488,8 @@
       height: 1px;
       background-color: $mercury;
       margin: auto;
-      margin-bottom: 16px;
-      margin-top: 16px;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
       transform: translateX(-2vw);
     }
   }
@@ -560,11 +554,11 @@
       padding-top: 2rem;
     }
 
-    &__container {
-      display: flex;
-      justify-content: flex-start;
-      padding-top: 1rem;
-    }
+    // &__container {
+    //   display: flex;
+    //   justify-content: flex-start;
+    //   padding-top: 1rem;
+    // }
 
     &__form-input-container {
       display: flex;
@@ -574,74 +568,80 @@
       margin-left: 19vw;
     }
 
-    &__form-label-name {
-      font-size: 14px;
-      padding-bottom: 4px;
-      font-weight: 600;
-      color: $silver;
-      font-family: Avenir, sans-serif;
-    }
+    // &__form-label-name {
+    //   font-size: 14px;
+    //   padding-bottom: 4px;
+    //   font-weight: 600;
+    //   color: $silver;
+    //   font-family: Avenir, sans-serif;
+    // }
 
-    &__form-label-input {
-      font-size: 14px;
-      padding-top: 24px;
-      font-weight: 600;
-      color: $silver;
-      font-family: Avenir, sans-serif;
-    }
+    // &__form-label-input {
+    //   font-size: 0.875rem;
+    //   padding-top: 1.5rem;
+    //   font-weight: 600;
+    //   color: $silver;
+    //   font-family: Avenir, sans-serif;
+    // }
 
-    &__form-input-field-name {
-      height: 36px;
-      border-radius: 4px;
-      border: 1px solid $mercury;
-      background-color: $alabastor;
-    }
+    // &__form-input-field-name {
+    //   height: 2.25rem;
+    //   border-radius: 4px;
+    //   border: 1px solid $mercury;
+    //   background-color: $alabastor;
+    // }
 
-    &__form-input-field-comment {
-      height: 96px;
-      border-radius: 4px;
-      border: 1px solid $mercury;
-      background-color: $alabastor;
-      font-family: Avenir, sans-serif;
-    }
+    // &__form-input-field-comment {
+    //   height: 6rem;
+    //   border-radius: 4px;
+    //   border: 1px solid $mercury;
+    //   background-color: $alabastor;
+    //   font-family: Avenir, sans-serif;
+    // }
 
-    &__form-btn-container {
-      display: flex;
-      justify-content: end;
-    }
+    // &__form-btn-container {
+    //   display: flex;
+    //   justify-content: end;
+    // }
 
-    &__form-btn {
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-      width: 12rem;
-      height: 40px;
-      padding-left: 32px;
-      padding-right: 32px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      background-color: $bandsite-black;
-      color: white;
-      font-weight: 600;
-      font-size: 1.2rem;
-      line-height: 28px;
-      border-radius: 4px;
-      border: none;
-      font-family: Avenir, sans-serif;
-    }
+    // &__form-btn {
+    //   margin-top: 1.5rem;
+    //   margin-bottom: 1.5rem;
+    //   width: 12rem;
+    //   height: 40px;
+    //   padding-left: 32px;
+    //   padding-right: 32px;
+    //   padding-top: 8px;
+    //   padding-bottom: 8px;
+    //   background-color: $bandsite-black;
+    //   color: white;
+    //   font-weight: 600;
+    //   font-size: 1.2rem;
+    //   line-height: 28px;
+    //   border-radius: 4px;
+    //   border: none;
+    //   font-family: Avenir, sans-serif;
+    // }
 
-    &__posts {
-      margin-bottom: 5rem;
-    }
+    // &__posts {
+    //   margin-bottom: 5rem;
+    // }
 
-    &__post-new,
-    &__post-0,
-    &__post-1,
-    &__post-2,
-    &__post-3 {
-      display: flex;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-    }
+    // &__post-new,
+    // &__post-0,
+    // &__post-1,
+    // &__post-2,
+    // &__post-3 {
+    //   display: flex;
+    //   padding-bottom: 1rem;
+    //   padding-top: 1rem;
+    // }
+
+    // &__name-date-container {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   padding-bottom: 13px;
+    // }
 
     &__avatar-loggedIn {
       width: 42px;
@@ -653,13 +653,7 @@
       margin-right: 1rem;
       position: relative;
       top: 0vw;
-      left: 18.8vw;
-    }
-
-    &__name-date-container {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 13px;
+      left: 18vw;
     }
 
     &__avatarAnon {
@@ -672,16 +666,16 @@
       margin-right: 1rem;
       position: relative;
       top: 0vw;
-      left: 19vw;
+      left: 18vw;
     }
 
-    &__username {
-      font-weight: 600;
-    }
+    // &__username {
+    //   font-weight: 600;
+    // }
 
-    &__date {
-      color: $silver;
-    }
+    // &__date {
+    //   color: $silver;
+    // }
 
     &__body {
       width: 35vw;
@@ -691,7 +685,7 @@
     }
 
     &__divider-lines {
-      width: 76vw;
+      width: 40vw;
       height: 1px;
       background-color: $mercury;
       margin: auto;

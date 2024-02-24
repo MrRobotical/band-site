@@ -334,27 +334,27 @@
     font-family: Avenir, sans-serif;
   }
   .comments__form-label-name {
-    font-size: 14px;
-    padding-bottom: 4px;
+    font-size: 0.875rem;
+    padding-bottom: 0.25rem;
     font-weight: 600;
     color: #afafaf;
     font-family: Avenir, sans-serif;
   }
   .comments__form-label-input {
-    font-size: 14px;
-    padding-top: 24px;
+    font-size: 0.875rem;
+    padding-top: 1.5rem;
     font-weight: 600;
     color: #afafaf;
     font-family: Avenir, sans-serif;
   }
   .comments__form-input-field-name {
-    height: 36px;
+    height: 2.25rem;
     border-radius: 4px;
     border: 1px solid #e1e1e1;
     background-color: #fafafa;
   }
   .comments__form-input-field-comment {
-    height: 96px;
+    height: 6rem;
     border-radius: 4px;
     border: 1px solid #e1e1e1;
     background-color: #fafafa;
@@ -365,36 +365,36 @@
     justify-content: end;
   }
   .comments__form-btn {
+    color: white;
+    background-color: #323232;
+    font-size: 1.2rem;
+    font-family: Avenir, sans-serif;
+    line-height: 1.75rem;
+    font-weight: 600;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     width: 12rem;
-    height: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: #323232;
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 28px;
+    height: 2.5rem;
     border-radius: 4px;
     border: none;
-    font-family: Avenir, sans-serif;
   }
   .comments__posts {
     margin-bottom: 5rem;
     padding-left: 3vw;
     padding-right: 5vw;
   }
-  .comments__post-new, .comments__post-0, .comments__post-1, .comments__post-2, .comments__post-3 {
+  .comments__post-new {
     display: flex;
     padding-bottom: 1rem;
     padding-top: 1rem;
   }
   .comments__avatar-loggedIn {
-    width: 42px;
-    height: 42px;
+    width: 2.625rem;
+    height: 2.625rem;
     border-radius: 50%;
     background-image: url("/assets/images/Mohan-muruge.jpg");
     background-size: cover;
@@ -407,8 +407,8 @@
     padding-bottom: 13px;
   }
   .comments__avatarAnon {
-    width: 42px;
-    height: 42px;
+    width: 2.625rem;
+    height: 2.625rem;
     border-radius: 50%;
     background-color: #e1e1e1;
     background-size: cover;
@@ -429,8 +429,8 @@
     height: 1px;
     background-color: #e1e1e1;
     margin: auto;
-    margin-bottom: 16px;
-    margin-top: 16px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     transform: translateX(-2vw);
   }
 }
@@ -480,74 +480,12 @@
     padding-left: 13.5vw;
     padding-top: 2rem;
   }
-  .comments__container {
-    display: flex;
-    justify-content: flex-start;
-    padding-top: 1rem;
-  }
   .comments__form-input-container {
     display: flex;
     flex-direction: column;
     width: 35vw;
     font-family: Avenir, sans-serif;
     margin-left: 19vw;
-  }
-  .comments__form-label-name {
-    font-size: 14px;
-    padding-bottom: 4px;
-    font-weight: 600;
-    color: #afafaf;
-    font-family: Avenir, sans-serif;
-  }
-  .comments__form-label-input {
-    font-size: 14px;
-    padding-top: 24px;
-    font-weight: 600;
-    color: #afafaf;
-    font-family: Avenir, sans-serif;
-  }
-  .comments__form-input-field-name {
-    height: 36px;
-    border-radius: 4px;
-    border: 1px solid #e1e1e1;
-    background-color: #fafafa;
-  }
-  .comments__form-input-field-comment {
-    height: 96px;
-    border-radius: 4px;
-    border: 1px solid #e1e1e1;
-    background-color: #fafafa;
-    font-family: Avenir, sans-serif;
-  }
-  .comments__form-btn-container {
-    display: flex;
-    justify-content: end;
-  }
-  .comments__form-btn {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    width: 12rem;
-    height: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: #323232;
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 28px;
-    border-radius: 4px;
-    border: none;
-    font-family: Avenir, sans-serif;
-  }
-  .comments__posts {
-    margin-bottom: 5rem;
-  }
-  .comments__post-new, .comments__post-0, .comments__post-1, .comments__post-2, .comments__post-3 {
-    display: flex;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
   }
   .comments__avatar-loggedIn {
     width: 42px;
@@ -559,12 +497,7 @@
     margin-right: 1rem;
     position: relative;
     top: 0vw;
-    left: 18.8vw;
-  }
-  .comments__name-date-container {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 13px;
+    left: 18vw;
   }
   .comments__avatarAnon {
     width: 42px;
@@ -576,13 +509,7 @@
     margin-right: 1rem;
     position: relative;
     top: 0vw;
-    left: 19vw;
-  }
-  .comments__username {
-    font-weight: 600;
-  }
-  .comments__date {
-    color: #afafaf;
+    left: 18vw;
   }
   .comments__body {
     width: 35vw;
@@ -591,7 +518,7 @@
     padding-right: 10vw;
   }
   .comments__divider-lines {
-    width: 76vw;
+    width: 40vw;
     height: 1px;
     background-color: #e1e1e1;
     margin: auto;

@@ -4,28 +4,6 @@
 
 // MOBILE
 @media (max-width: 768px) {
-  // .hero__container {
-  //   position: relative;
-  //   width: 100vw;
-  // }
-
-  // .hero__shows-img-container {
-  //   width: 100%;
-  //   height: 500px;
-  // }
-
-  // .hero__shows-img-photo {
-  //   height: 100%;
-  // }
-
-  // .hero__souncdloud-container {
-  //   position: absolute;
-  //   top: 18rem;
-  //   left: 4rem;
-  //   width: 75%;
-  //   margin: auto;
-  // }
-
   .hero {
     &__container {
       position: relative;
@@ -36,7 +14,7 @@
       width: 100%;
     }
 
-    &__shows-img-photo {
+    &__shows-img {
       width: 100%;
       height: 400px;
       object-fit: cover;
@@ -55,8 +33,9 @@
     &__souncdloud-container {
       position: absolute;
       top: 14rem;
-      left: 10vw;
+      left: 9vw;
       width: 80%;
+      max-width: 350px;
       margin-right: auto;
       margin-left: auto;
     }
@@ -74,16 +53,6 @@
       display: block;
     }
 
-    // Switched to vw units for the Hero image as the font scales better with the image vs the 24px/1.5rem requested in the stylesheet.
-    &__img-title {
-      font-size: 2rem;
-      font-weight: 600;
-      position: absolute;
-      top: 26%;
-      left: 9%;
-      color: $white;
-    }
-
     &__img-top-title {
       font-size: 1rem;
       font-weight: 400;
@@ -92,15 +61,20 @@
       left: 9%;
       color: $white;
     }
+
+    &__img-title {
+      font-size: 2rem;
+      font-weight: 600;
+      position: absolute;
+      top: 26%;
+      left: 9%;
+      color: $white;
+    }
   }
 
   // SHOWS SECTION SHOWS SECTION SHOWS SECTION SHOWS SECTION
 
   .shows {
-    &__heading-title-dsk-tablet {
-      display: none;
-    }
-
     &__title {
       @include mobile-sect-header;
       margin-top: 3rem;
@@ -108,27 +82,23 @@
       margin-bottom: 2.5rem;
     }
 
-    // &__dsk-tablet-container {
-    //   margin-left: 1rem;
-    // }
-
-    &__info-container {
-      margin-left: 1rem;
+    &__heading-title-dsk-tablet {
+      display: none;
     }
 
     &__heading-title-mobile {
       margin-top: 0.5rem;
-      font-size: 14px;
+      font-size: 0.875rem;
       padding-bottom: 0.5rem;
       font-weight: 600;
       color: $silver;
       font-family: Avenir, sans-serif;
     }
 
-    // &__info {
-    //   font-weight: 600;
-    //   margin-bottom: 1rem;
-    // }
+    &__info-container {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
 
     &__info-date {
       font-weight: 600;
@@ -136,12 +106,7 @@
       margin-bottom: 1.5rem;
     }
 
-    &__info-venue {
-      font-weight: 400;
-      width: 175px;
-      margin-bottom: 1.5rem;
-    }
-
+    &__info-venue,
     &__info-location {
       font-weight: 400;
       width: 175px;
@@ -149,18 +114,18 @@
     }
 
     &__buy-btn {
-      margin-bottom: 1.5rem;
-      width: 90vw;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      background-color: $bandsite-black;
-      color: white;
-      font-weight: 600;
-      font-size: 1.2rem;
-      line-height: 28px;
       border-radius: 4px;
-      border: none;
+      color: white;
+      font-size: 1.2rem;
       font-family: Avenir, sans-serif;
+      line-height: 1.75rem;
+      font-weight: 600;
+      background-color: $bandsite-black;
+      width: 90vw;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      border: none;
     }
   }
 }
@@ -175,7 +140,6 @@
 
     &__shows-img-container {
       width: 100%;
-      // height: 500px;
     }
 
     &__shows-img-photo {
@@ -186,14 +150,9 @@
 
     &__souncdloud-container {
       position: absolute;
-      top: 23rem;
-      left: 4rem;
+      top: 24rem;
+      left: 7vw;
       width: 500px;
-      // margin: auto;
-    }
-
-    &__heading-title-dsk-tablet {
-      display: none;
     }
 
     &__img-overlay {
@@ -204,20 +163,8 @@
       background-color: rgba($bandsite-black, 0.5);
     }
 
-    &__mobile-title {
+    &__dsktop-title {
       display: none;
-    }
-
-    // Switched to vw units for the Hero image as the font scales better with the image vs the 24px/1.5rem requested in the stylesheet.
-    &__img-title {
-      font-size: 5rem;
-      font-weight: 600;
-      position: absolute;
-      top: 30%;
-      left: 6.5vw;
-      color: $white;
-      display: flex;
-      flex-direction: column;
     }
 
     &__img-top-title {
@@ -227,6 +174,17 @@
       top: 22%;
       left: 6.8vw;
       color: $white;
+    }
+
+    &__img-title {
+      font-size: 5rem;
+      font-weight: 600;
+      position: absolute;
+      top: 28%;
+      left: 6.5vw;
+      color: $white;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -248,11 +206,10 @@
       display: flex;
       justify-content: space-around;
       height: 50px;
-      padding-bottom: 16px;
-      padding-top: 16px;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
       width: 90%;
       margin: auto;
-      // border: 2px solid red;
     }
     &__info-container:hover {
       background-color: $alabastor;
@@ -265,7 +222,7 @@
     &__title {
       @include dsk-tablet-sect-header;
       margin-top: 3rem;
-      margin-left: 1vw;
+      margin-left: 3vw;
       margin-bottom: 2.5rem;
     }
 
@@ -291,43 +248,43 @@
     }
 
     &__info-venue {
-      font-weight: 600;
+      font-weight: 400;
       width: 175px;
       padding-top: 1rem;
     }
 
     &__info-location {
-      font-weight: 600;
+      font-weight: 400;
       width: 175px;
       padding-top: 1rem;
     }
 
-    // &__btn-container {
-    //   width: 175px;
-    //   margin-bottom: 1rem;
-    // }
+    &__btn-container {
+      width: 175px;
+      margin-bottom: 1rem;
+    }
 
     &__buy-btn {
+      border-radius: 4px;
+      color: $white;
+      font-size: 1.2rem;
+      font-family: Avenir, sans-serif;
+      background-color: $bandsite-black;
+      font-weight: 600;
+      line-height: 1.75rem;
       margin-bottom: 1.5rem;
       width: 175px;
-      padding-top: 14px;
-      padding-bottom: 10px;
-      background-color: $bandsite-black;
-      color: white;
-      font-weight: 600;
-      font-size: 1.2rem;
-      border-radius: 4px;
+      padding-top: 0.875rem;
+      padding-bottom: 0.625rem;
       border: none;
-      font-family: Avenir, sans-serif;
+      cursor: pointer;
     }
 
     &__divider-lines {
       width: 90%;
-      height: 2px;
+      height: 1px;
       background-color: $mercury;
       margin: auto;
-      // margin-bottom: 1rem;
-      // margin-top: 1rem;
     }
   }
 }
@@ -336,10 +293,10 @@
 @media (min-width: 1280px) {
   .hero {
     &__img-title {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 600;
       position: absolute;
-      top: 40%;
+      top: 34.5%;
       left: 8.5vw;
       color: $white;
       display: flex;
@@ -350,16 +307,17 @@
       font-size: 1rem;
       font-weight: 600;
       position: absolute;
-      top: 34%;
-      left: 11.5vw;
+      top: 31%;
+      left: 12vw;
       color: $white;
     }
 
     &__souncdloud-container {
       position: absolute;
-      top: 35%;
-      left: 50vw;
-      width: 400px;
+      top: 40%;
+      left: 58vw;
+      width: 30%;
+      max-width: 400px;
       margin-right: auto;
       margin-left: auto;
     }
@@ -373,7 +331,7 @@
 
   .shows__title {
     position: relative;
-    top: 4rem;
+    top: 4.5rem;
     left: 0vw;
   }
 }

@@ -68,16 +68,21 @@ window.addEventListener('load', function (event) {
   nonMobileHeaderContainer.appendChild(nonMobileDummyContainer);
 });
 
-// // SHOW INFO CONTAINERS
+// Title Creation
+// const showsTitleContainer = document.querySelector('.shows__container');
+// showsTitle = document.createElement('h2');
+// showsTitle.classList.add('shows__title');
+// showsTitleContainer.appendChild('showsTitle');
+// dateTitleMobile.innerText = 'Showss';
 
+// // SHOW INFO CONTAINERS
 window.addEventListener('load', function (event) {
   showsArr.forEach((show) => {
     //Top level El to append to
+
     const showsParentContainer = document.querySelector(
       '.shows__data-container'
     );
-
-    console.log(showsParentContainer);
 
     //Top Level Container to append to
     const showsInfoContainer = document.createElement('div');
