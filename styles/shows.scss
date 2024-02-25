@@ -70,8 +70,7 @@
     }
   }
 
-  // SHOWS SECTION SHOWS SECTION SHOWS SECTION SHOWS SECTION
-
+  // SHOWS SECTION
   .shows {
     &__title {
       @include mobile-sect-header;
@@ -85,7 +84,7 @@
     }
 
     &__heading-title-mobile {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       font-size: 0.875rem;
       padding-bottom: 0.5rem;
       font-weight: 600;
@@ -96,6 +95,18 @@
     &__info-container {
       margin-left: 1rem;
       margin-right: 1rem;
+    }
+
+    &__info-container:hover {
+      background-color: $alabastor;
+    }
+
+    &__info-container--selected {
+      background-color: $mercury !important;
+      padding-top: 8px;
+      padding-right: 8px;
+      padding-left: 8px;
+      border-radius: 8px;
     }
 
     &__info-date {
@@ -111,6 +122,11 @@
       margin-bottom: 1.5rem;
     }
 
+    &__btn-container {
+      display: flex;
+      justify-content: center;
+    }
+
     &__buy-btn {
       border-radius: 4px;
       color: white;
@@ -120,10 +136,11 @@
       font-weight: 600;
       background-color: $bandsite-black;
       width: 90vw;
-      padding-top: 0.5rem;
+      padding-top: 0.8rem;
       padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       border: none;
+      cursor: pointer;
     }
   }
 }
@@ -186,7 +203,7 @@
     }
   }
 
-  // SHOWS SECTION // SHOWS SECTION // SHOWS SECTION // SHOWS SECTION
+  // SHOWS SECTION
 
   .shows {
     &__heading-title-mobile {
@@ -209,13 +226,13 @@
       width: 90%;
       margin: auto;
     }
-    &__info-container:hover {
-      background-color: $alabastor;
-    }
+    // &__info-container:hover {
+    //   background-color: $alabastor;
+    // }
 
-    &__info-container--selected {
-      background-color: $mercury !important;
-    }
+    // &__info-container--selected {
+    //   background-color: $mercury !important;
+    // }
 
     &__title {
       @include dsk-tablet-sect-header;
