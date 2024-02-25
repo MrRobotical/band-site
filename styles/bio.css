@@ -154,7 +154,7 @@
   .comments__posts {
     margin-bottom: 2rem;
   }
-  .comments__post-new, .comments__post-0, .comments__post-1, .comments__post-2, .comments__post-3 {
+  .comments__post-new {
     display: flex;
   }
   .comments__avatar-loggedIn {

@@ -31,66 +31,61 @@ showsArr = [
   },
 ];
 
+//CREATE SHOWS TITLE & COLUMN HEADER VALUES - TABLET & DESKTOP
 window.addEventListener('load', function (event) {
+  // Title reation
+  const showsTitleContainer = document.querySelector('.shows__container');
+  showsTitle = document.createElement('h2');
+  showsTitle.classList.add('shows__title');
+  showsTitleContainer.prepend(showsTitle);
+  showsTitle.innerText = 'Shows';
+
   //Top level El to append to:
   const showsParentContainer = document.querySelector('.shows__data-container');
 
-  // DESKTOP & TABLET HEADERS
-  // DESKTOP & TABLET HEADERS
-  // DESKTOP & TABLET HEADERS
-
-  //Desktop & Tablet Container via JS
+  //Non-Mobile header container
   const nonMobileHeaderContainer = document.createElement('div');
   nonMobileHeaderContainer.classList.add('shows__heading-title-dsk-tablet');
   showsParentContainer.prepend(nonMobileHeaderContainer);
 
-  //Date Heading - Desktop & Tablet
+  //Date title element
   const nonMobileDateContainer = document.createElement('div');
   nonMobileDateContainer.classList.add('shows__headings-dsk-tablet');
   nonMobileHeaderContainer.appendChild(nonMobileDateContainer);
   nonMobileDateContainer.innerText = 'DATE';
 
-  //Venue Heading - Desktop & Tablet
+  //Venue title element
   const nonMobileVenueContainer = document.createElement('div');
   nonMobileVenueContainer.classList.add('shows__headings-dsk-tablet');
   nonMobileHeaderContainer.appendChild(nonMobileVenueContainer);
   nonMobileVenueContainer.innerText = 'VENUE';
 
-  //Location Heading - Desktop & Tablet
+  //Location title element
   const nonMobileLocationContainer = document.createElement('div');
   nonMobileLocationContainer.classList.add('shows__headings-dsk-tablet');
   nonMobileHeaderContainer.appendChild(nonMobileLocationContainer);
   nonMobileLocationContainer.innerText = 'LOCATION';
 
-  //Dummy Header - Desktop & Tablet
+  //Dummy title element
   const nonMobileDummyContainer = document.createElement('div');
   nonMobileDummyContainer.classList.add('shows__headings-dsk-tablet-dummy-div');
   nonMobileHeaderContainer.appendChild(nonMobileDummyContainer);
 });
 
-// Title Creation
-// const showsTitleContainer = document.querySelector('.shows__container');
-// showsTitle = document.createElement('h2');
-// showsTitle.classList.add('shows__title');
-// showsTitleContainer.appendChild('showsTitle');
-// dateTitleMobile.innerText = 'Showss';
-
-// // SHOW INFO CONTAINERS
+// SHOWS DATA CONTAINERS & ELEMENTS
 window.addEventListener('load', function (event) {
   showsArr.forEach((show) => {
-    //Top level El to append to
-
+    //Top level element to append to
     const showsParentContainer = document.querySelector(
       '.shows__data-container'
     );
 
-    //Top Level Container to append to
+    //Top level container creation
     const showsInfoContainer = document.createElement('div');
     showsInfoContainer.classList.add('shows__info-container');
-
     showsParentContainer.appendChild(showsInfoContainer);
 
-    //Date Title - Mobile
+    //Date title - Mobile
     const dateTitleMobile = document.createElement('div');
     dateTitleMobile.classList.add('shows__heading-title-mobile');
     showsInfoContainer.appendChild(dateTitleMobile);
@@ -102,7 +97,7 @@ window.addEventListener('load', function (event) {
     showsInfoContainer.appendChild(dateInfo);
     dateInfo.innerText = show.date;
 
-    //Venue Title - Mobile
+    //Venue title - Mobile
     const venueTitleMobile = document.createElement('div');
     venueTitleMobile.classList.add('shows__heading-title-mobile');
     showsInfoContainer.appendChild(venueTitleMobile);
@@ -114,7 +109,7 @@ window.addEventListener('load', function (event) {
     showsInfoContainer.appendChild(venueInfo);
     venueInfo.innerText = show.venue;
 
-    //Location Title - Mobile
+    //Location title - Mobile
     const locationTitleMobile = document.createElement('div');
     locationTitleMobile.classList.add('shows__heading-title-mobile');
     showsInfoContainer.appendChild(locationTitleMobile);
@@ -131,18 +126,18 @@ window.addEventListener('load', function (event) {
     buyButtonContainer.classList.add('shows__btn-container');
     showsInfoContainer.appendChild(buyButtonContainer);
 
-    //Button Element
+    //Button element
     const buyButton = document.createElement('button');
     buyButton.classList.add('shows__buy-btn');
     buyButtonContainer.appendChild(buyButton);
     buyButton.innerText = 'BUY TICKETS';
 
-    //Divider Line
+    //Divider line
     const dividerLine = document.createElement('div');
     dividerLine.classList.add('shows__divider-lines');
     showsInfoContainer.insertAdjacentElement('afterend', dividerLine);
 
-    // Selected Show Styling
+    // Selected Show Styling-Hightlight
     buyButton.addEventListener('click', function () {
       // Remove any selected stylings
       removeSelectedClass();

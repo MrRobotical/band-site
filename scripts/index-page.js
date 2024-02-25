@@ -16,47 +16,46 @@ let commentsArr = [
   },
 ];
 
+// DISPLAY COMMENTS FROM ARRAY
 window.addEventListener('load', function (event) {
-  // Insert my code for dynamically loding the comments here
-
   commentsArr.forEach((comment) => {
-    //First El to append to:
+    //Parent Element to append to:
     const createJsCommentsParentContainer =
       document.querySelector('.comments__posts');
 
-    //Avatar Container via JS
+    //Avatar Container
     const createJsAvatarContainer = document.createElement('div');
     createJsAvatarContainer.classList.add('comments__post-new');
     createJsCommentsParentContainer.prepend(createJsAvatarContainer);
 
-    // Avatar El via JS
+    // Avatar element
     const createAvatarOutputEl = document.createElement('div');
     createAvatarOutputEl.classList.add('comments__avatarAnon');
     createJsAvatarContainer.prepend(createAvatarOutputEl);
 
-    //Comments Body Container via JS
+    //Comments container
     const createJsbodyContainer = document.createElement('div');
     createJsbodyContainer.classList.add('comments__body');
     createJsAvatarContainer.appendChild(createJsbodyContainer);
 
-    //Name - Date Container via JS
+    //Name & Date container
     const createJsNameDateContainer = document.createElement('div');
     createJsNameDateContainer.classList.add('comments__name-date-container');
     createJsbodyContainer.appendChild(createJsNameDateContainer);
 
-    // Name El via JS
+    // Name element
     const createNameOutputEl = document.createElement('p');
     createNameOutputEl.classList.add('comments__username');
     createJsNameDateContainer.appendChild(createNameOutputEl);
     createNameOutputEl.innerText = comment.name;
 
-    // Date
+    // Date element
     const createDateOutputEl = document.createElement('p');
     createDateOutputEl.classList.add('comments__date');
     createJsNameDateContainer.appendChild(createDateOutputEl);
     createDateOutputEl.innerText = comment.timestamp;
 
-    //Comments
+    //Comments element
     const createCommentOutputEl = document.createElement('p');
     createCommentOutputEl.classList.add('comments__txt');
     createJsbodyContainer.appendChild(createCommentOutputEl);
@@ -69,26 +68,17 @@ window.addEventListener('load', function (event) {
   });
 });
 
-// My Form event listener
-// My Form event listener
-// My Form event listener
-// My Form event listener
-// My Form event listener
-// My Form event listener
-
+// FORM EVENT LISTENER
 document.querySelector('#form').addEventListener('submit', function (event) {
   event.preventDefault();
 
   const name = document.querySelector('#name').value;
   const comment = document.querySelector('#comment').value;
 
-  // Clear Inputs
-  document.querySelector('#name').value = '';
-  document.querySelector('#comment').value = '';
-
-  // Time Stamp attempt - Not sure about this
+  // Time Stamp
   const timestamp = new Date().toLocaleDateString('en-US');
 
+  //Push new comment to array
   const newComment = {
     name: name,
     timestamp: timestamp,
@@ -96,51 +86,54 @@ document.querySelector('#form').addEventListener('submit', function (event) {
   };
 
   commentsArr.push(newComment);
-  console.log(commentsArr);
 
-  //First El to append to:
+  // Clear Inputs
+  document.querySelector('#name').value = '';
+  document.querySelector('#comment').value = '';
+
+  //Parent element to append to:
   const createJsCommentsParentContainer =
     document.querySelector('.comments__posts');
 
-  //Avatar Container via JS
+  //Container that holds avatar & comments body - Need to rename variables below
   const createJsAvatarContainer = document.createElement('div');
   createJsAvatarContainer.classList.add('comments__post-new');
   createJsCommentsParentContainer.prepend(createJsAvatarContainer);
 
-  // Avatar El via JS
+  // Avatar element
   const createAvatarOutputEl = document.createElement('div');
   createAvatarOutputEl.classList.add('comments__avatar-loggedIn');
   createJsAvatarContainer.prepend(createAvatarOutputEl);
 
-  //Comments Body Container via JS
+  //Comments container
   const createJsbodyContainer = document.createElement('div');
   createJsbodyContainer.classList.add('comments__body');
   createJsAvatarContainer.appendChild(createJsbodyContainer);
 
-  //Name - Date Container via JS
+  //Name & date container
   const createJsNameDateContainer = document.createElement('div');
   createJsNameDateContainer.classList.add('comments__name-date-container');
   createJsbodyContainer.appendChild(createJsNameDateContainer);
 
-  // Name El via JS
+  // Name element
   const createNameOutputEl = document.createElement('p');
   createNameOutputEl.classList.add('comments__username');
   createJsNameDateContainer.appendChild(createNameOutputEl);
   createNameOutputEl.innerText = name;
 
-  // Date
+  // Date element
   const createDateOutputEl = document.createElement('p');
   createDateOutputEl.classList.add('comments__date');
   createJsNameDateContainer.appendChild(createDateOutputEl);
   createDateOutputEl.innerText = timestamp;
 
-  //Comments
+  //Comments element
   const createCommentOutputEl = document.createElement('p');
   createCommentOutputEl.classList.add('comments__txt');
   createJsbodyContainer.appendChild(createCommentOutputEl);
   createCommentOutputEl.innerText = comment;
 
-  // Divider Line -
+  // Divider Line element
   const dividerLinesEl = document.createElement('div');
   dividerLinesEl.classList.add('comments__divider-lines');
   createJsCommentsParentContainer.prepend(dividerLinesEl);
