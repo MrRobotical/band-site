@@ -110,14 +110,14 @@
 
     &__info-date {
       font-weight: 600;
-      width: 175px;
+      width: 10.938rem;
       margin-bottom: 1.5rem;
     }
 
     &__info-venue,
     &__info-location {
       font-weight: 400;
-      width: 175px;
+      width: 10.938rem;
       margin-bottom: 1.5rem;
     }
 
@@ -217,7 +217,7 @@
     &__info-container {
       display: flex;
       justify-content: space-around;
-      height: 50px;
+      height: 3.125rem;
       padding-bottom: 1rem;
       padding-top: 1rem;
       width: 90%;
@@ -245,7 +245,7 @@
       font-weight: 600;
       color: $silver;
       font-family: Avenir, sans-serif;
-      width: 175px;
+      width: 10.938rem;
     }
 
     &__headings-dsk-tablet-dummy-div {
@@ -285,7 +285,7 @@
       font-weight: 600;
       line-height: 1.75rem;
       margin-bottom: 1.5rem;
-      width: 175px;
+      width: 10.938rem;
       padding-top: 0.875rem;
       padding-bottom: 0.625rem;
       border: none;
@@ -334,8 +334,6 @@
       margin-left: auto;
     }
   }
-
-  //Simplified b
 
   .shows {
     &__container,
