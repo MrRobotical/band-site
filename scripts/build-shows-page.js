@@ -31,7 +31,7 @@ showsArr = [
   },
 ];
 
-//Top level Parent Div container
+//TOP LEVEL PARENT CONTAINER - SHOW TITLE & DESKTOP/TABLET TITLES
 const showsTitleContainer = document.querySelector('.shows__container');
 
 // Shows Title
@@ -45,7 +45,7 @@ const showsParentContainer = document.createElement('div');
 showsParentContainer.classList.add('shows__data-container');
 showsTitleContainer.appendChild(showsParentContainer);
 
-//Non-Mobile header container
+//Desktop & Mobile header titles container
 const nonMobileHeaderContainer = document.createElement('div');
 nonMobileHeaderContainer.classList.add('shows__heading-title-dsk-tablet');
 showsParentContainer.prepend(nonMobileHeaderContainer);
@@ -137,7 +137,6 @@ showsArr.forEach((show) => {
 
   //Styling-Hightlight -- Selected
   buyButton.addEventListener('click', function () {
-    // Remove any selected stylings
     removeSelectedClass();
     // Add the selected class to the clicked item
     showsInfoContainer.classList.add('shows__info-container--selected');

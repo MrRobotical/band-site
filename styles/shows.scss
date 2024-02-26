@@ -70,7 +70,6 @@
     }
   }
 
-  // SHOWS SECTION
   .shows {
     &__title {
       @include mobile-sect-header;
@@ -103,10 +102,10 @@
 
     &__info-container--selected {
       background-color: $mercury !important;
-      padding-top: 8px;
-      padding-right: 8px;
-      padding-left: 8px;
-      border-radius: 8px;
+      padding-top: 0.5rem;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      border-radius: 0.5rem;
     }
 
     &__info-date {
@@ -203,8 +202,6 @@
     }
   }
 
-  // SHOWS SECTION
-
   .shows {
     &__heading-title-mobile {
       display: none;
@@ -226,13 +223,13 @@
       width: 90%;
       margin: auto;
     }
-    // &__info-container:hover {
-    //   background-color: $alabastor;
-    // }
+    &__info-container:hover {
+      background-color: $alabastor;
+    }
 
-    // &__info-container--selected {
-    //   background-color: $mercury !important;
-    // }
+    &__info-container--selected {
+      background-color: $mercury !important;
+    }
 
     &__title {
       @include dsk-tablet-sect-header;
@@ -338,15 +335,25 @@
     }
   }
 
-  .shows__container,
-  .shows__data-container {
-    width: 60vw;
-    margin-left: 15vw;
-  }
+  //Simplified b
 
-  .shows__title {
-    position: relative;
-    top: 4.5rem;
-    left: 0vw;
+  .shows {
+    &__container,
+    &__data-container {
+      width: 60vw;
+      margin-left: 15vw;
+    }
+
+    // .shows__container,
+    // .shows__data-container {
+    //   width: 60vw;
+    //   margin-left: 15vw;
+    // }
+
+    &__title {
+      position: relative;
+      top: 4.5rem;
+      left: 0vw;
+    }
   }
 }
