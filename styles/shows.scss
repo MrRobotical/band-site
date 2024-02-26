@@ -1,0 +1,359 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+
+// MOBILE
+@media (max-width: 768px) {
+  .hero {
+    &__container {
+      position: relative;
+      width: 100%;
+    }
+
+    &__shows-img-container {
+      width: 100%;
+    }
+
+    &__shows-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    &__img-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 98.5%;
+      background-color: rgba($bandsite-black, 0.5);
+    }
+
+    &__souncdloud-container {
+      position: absolute;
+      top: 14rem;
+      left: 9vw;
+      width: 80%;
+      max-width: 350px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &__dsktop-title {
+      display: none;
+    }
+
+    &__mobile-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title-break {
+      display: block;
+    }
+
+    &__img-top-title {
+      font-size: 1rem;
+      font-weight: 400;
+      position: absolute;
+      top: 22%;
+      left: 9%;
+      color: $white;
+    }
+
+    &__img-title {
+      font-size: 2rem;
+      font-weight: 600;
+      position: absolute;
+      top: 26%;
+      left: 9%;
+      color: $white;
+    }
+  }
+
+  .shows {
+    &__title {
+      @include mobile-sect-header;
+      margin-top: 3rem;
+      margin-left: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    &__heading-title-dsk-tablet {
+      display: none;
+    }
+
+    &__heading-title-mobile {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      padding-bottom: 0.5rem;
+      font-weight: 600;
+      color: $silver;
+      font-family: Avenir, sans-serif;
+    }
+
+    &__info-container {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    &__info-container:hover {
+      background-color: $alabastor;
+    }
+
+    &__info-container--selected {
+      background-color: $mercury !important;
+      padding-top: 0.5rem;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    &__info-date {
+      font-weight: 600;
+      width: 175px;
+      margin-bottom: 1.5rem;
+    }
+
+    &__info-venue,
+    &__info-location {
+      font-weight: 400;
+      width: 175px;
+      margin-bottom: 1.5rem;
+    }
+
+    &__btn-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__buy-btn {
+      border-radius: 4px;
+      color: white;
+      font-size: 1.2rem;
+      font-family: Avenir, sans-serif;
+      line-height: 1.75rem;
+      font-weight: 600;
+      background-color: $bandsite-black;
+      width: 90vw;
+      padding-top: 0.8rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+// TABLET RESPONSIVE
+@media (min-width: 769px) {
+  .hero {
+    &__container {
+      position: relative;
+      width: 100%;
+    }
+
+    &__shows-img-container {
+      width: 100%;
+    }
+
+    &__shows-img {
+      width: 100%;
+      object-fit: cover;
+      height: 575px;
+    }
+
+    &__souncdloud-container {
+      position: absolute;
+      top: 24rem;
+      left: 7vw;
+      width: 500px;
+    }
+
+    &__img-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 98.5%;
+      background-color: rgba($bandsite-black, 0.5);
+    }
+
+    &__dsktop-title {
+      display: none;
+    }
+
+    &__img-top-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      position: absolute;
+      top: 22%;
+      left: 6.8vw;
+      color: $white;
+    }
+
+    &__img-title {
+      font-size: 5rem;
+      font-weight: 600;
+      position: absolute;
+      top: 28%;
+      left: 6.5vw;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .shows {
+    &__heading-title-mobile {
+      display: none;
+    }
+
+    &__heading-title-dsk-tablet {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      margin: auto;
+    }
+
+    &__info-container {
+      display: flex;
+      justify-content: space-around;
+      height: 50px;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      width: 90%;
+      margin: auto;
+    }
+    &__info-container:hover {
+      background-color: $alabastor;
+    }
+
+    &__info-container--selected {
+      background-color: $mercury !important;
+    }
+
+    &__title {
+      @include dsk-tablet-sect-header;
+      margin-top: 3rem;
+      margin-left: 3vw;
+      margin-bottom: 2.5rem;
+    }
+
+    &__headings-dsk-tablet {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      padding-bottom: 0.5rem;
+      font-weight: 600;
+      color: $silver;
+      font-family: Avenir, sans-serif;
+      width: 175px;
+    }
+
+    &__headings-dsk-tablet-dummy-div {
+      visibility: hidden;
+      width: 175px;
+    }
+
+    &__info-date {
+      font-weight: 600;
+      width: 175px;
+      padding-top: 1rem;
+    }
+
+    &__info-venue {
+      font-weight: 400;
+      width: 175px;
+      padding-top: 1rem;
+    }
+
+    &__info-location {
+      font-weight: 400;
+      width: 175px;
+      padding-top: 1rem;
+    }
+
+    &__btn-container {
+      width: 175px;
+      margin-bottom: 1rem;
+    }
+
+    &__buy-btn {
+      border-radius: 4px;
+      color: $white;
+      font-size: 1.2rem;
+      font-family: Avenir, sans-serif;
+      background-color: $bandsite-black;
+      font-weight: 600;
+      line-height: 1.75rem;
+      margin-bottom: 1.5rem;
+      width: 175px;
+      padding-top: 0.875rem;
+      padding-bottom: 0.625rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__divider-lines {
+      width: 90%;
+      height: 1px;
+      background-color: $mercury;
+      margin: auto;
+    }
+  }
+}
+
+// DESKTOP RESPONSIVE
+@media (min-width: 1280px) {
+  .hero {
+    &__img-title {
+      font-size: 4rem;
+      font-weight: 600;
+      position: absolute;
+      top: 34.5%;
+      left: 8.5vw;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__img-top-title {
+      font-size: 1rem;
+      font-weight: 600;
+      position: absolute;
+      top: 31%;
+      left: 12vw;
+      color: $white;
+    }
+
+    &__souncdloud-container {
+      position: absolute;
+      top: 40%;
+      left: 58vw;
+      width: 30%;
+      max-width: 400px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  //Simplified b
+
+  .shows {
+    &__container,
+    &__data-container {
+      width: 60vw;
+      margin-left: 15vw;
+    }
+
+    // .shows__container,
+    // .shows__data-container {
+    //   width: 60vw;
+    //   margin-left: 15vw;
+    // }
+
+    &__title {
+      position: relative;
+      top: 4.5rem;
+      left: 0vw;
+    }
+  }
+}

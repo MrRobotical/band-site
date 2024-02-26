@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
   </head>
   <body>
     <header class="header">
@@ -18,8 +19,12 @@
       </div>
       <nav class="nav-bar">
         <ul class="nav-bar__ul">
-          <li class="nav-bar__item nav-bar__item--highlight">Biography</li>
-          <li class="nav-bar__item nav-bar__item--inactive">Shows</li>
+          <li class="nav-bar__item nav-bar__item--highlight">
+            <a href="/index.html" class="nav-bar__link">Biography</a>
+          </li>
+          <li class="nav-bar__item nav-bar__item--inactive">
+            <a href="/pages/shows.html" class="nav-bar__link">Shows</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -144,6 +149,45 @@
       </section>
     </main>
 
+    <section class="comments">
+      <h2 class="comments__title">Join the Conversation</h2>
+      <div class="comments__container">
+        <div class="comments__avatar-loggedIn"></div>
+        <div class="comments__form-container">
+          <form id="form">
+            <div class="comments__form-input-container">
+              <label for="name" class="comments__form-label-name">NAME:</label>
+              <input
+                type="text"
+                id="name"
+                class="comments__form-input-field-name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="comments__form-input-container">
+              <label for="comment" class="comments__form-label-input"
+                >COMMENT:</label
+              >
+              <textarea
+                id="comment"
+                class="comments__form-input-field-comment"
+                name="comment"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div class="comments__form-btn-container">
+              <button type="submit" class="comments__form-btn">COMMENT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- POST CREATION IN JS  -->
+      <div class="comments__posts"></div>
+    </section>
+
     <footer class="footer">
       <div class="footer__headlines-container">
         <h3 class="footer__headlines-top-title">Get in Touch</h3>
@@ -218,5 +262,6 @@
         Copyright The Bees Knees © 2023 All Rights reserved
       </p>
     </footer>
+    <script src="/scripts/index-page.js"></script>
   </body>
 </html>
