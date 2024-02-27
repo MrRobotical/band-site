@@ -1,45 +1,12 @@
-let commentsArr = [
-  {
-    name: 'Isaac Tadesse',
-    timestamp: '10/20/2023',
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
-    name: 'Christina Cabrera',
-    timestamp: '10/28/2023',
-    text: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
-  },
-
-  {
-    name: 'Victor Pinto',
-    timestamp: '11/02/2023',
-    text: 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
-  },
-];
-
-// Sprint 3 below
-// Sprint 3 below
-// Sprint 3 below
-// Sprint 3 below
-// Sprint 3 below
-
-class BandsiteApi {
-  constructor(apiKey) {
-    this.baseURL = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
-    this.apiKey = apiKey;
-  }
-}
-
-const apiKey = new BandsiteApi('d0eb4df4-5d31-4b4e-ae18-cc5b71f5b1a1');
-
+// GET COMMENTS FROM SERVER
 async function getComments() {
   try {
     const response = await axios.get(
-      `${apiKey.baseURL}comments?api_key=${apiKey.apiKey}`
+      `${InstanceOfBandsiteApi.baseURL}comments?api_key=${InstanceOfBandsiteApi.apiKey}`
     );
     console.log(response.data);
 
-    // DISPLAY COMMENTS FROM ARRAY
+    // Build elements
     response.data.forEach((comment) => {
       //Parent Element to append to:
       const createJsCommentsParentContainer =
@@ -96,39 +63,27 @@ async function getComments() {
     console.log(error);
   }
 }
-
 getComments();
 
-console.log(`${apiKey.baseURL}comments?api_key=${apiKey.apiKey}`);
-
-// EVENT LISTENER & POST COMMENT TO SERVER
-// EVENT LISTENER & POST COMMENT TO SERVER
-// EVENT LISTENER & POST COMMENT TO SERVER
-// EVENT LISTENER & POST COMMENT TO SERVER
 // FORM EVENT LISTENER
 document.querySelector('#form').addEventListener('submit', function (event) {
   event.preventDefault();
 
+  //Input variables from Form
   const name = document.querySelector('#name').value;
   const comment = document.querySelector('#comment').value;
 
   // Time Stamp
   const timestamp = new Date().toLocaleDateString('en-US');
 
-  //Push new comment to array - Sprint 2
-  // const newComment = {
-  //   name: name,
-  //   timestamp: timestamp,
-  //   text: comment,
-  // };
-  // commentsArr.push(newComment);
-
+  // Comment object from Form input
   const newComment = {
     name: name,
     comment: comment,
-    // timestamp: timestamp,
+    // timestamp: timestamp, - This line was causing an error
   };
 
+  // INVOKE POST COMMENTS FUNCTION
   postComments(newComment);
 
   // // Clear Inputs
@@ -139,7 +94,7 @@ document.querySelector('#form').addEventListener('submit', function (event) {
   async function postComments(commentData) {
     try {
       const response = await axios.post(
-        `${apiKey.baseURL}comments?api_key=${apiKey.apiKey}`,
+        `${InstanceOfBandsiteApi.baseURL}comments?api_key=${InstanceOfBandsiteApi.apiKey}`,
         commentData,
 
         {
@@ -190,6 +145,8 @@ document.querySelector('#form').addEventListener('submit', function (event) {
   createDateOutputEl.classList.add('comments__date');
   createJsNameDateContainer.appendChild(createDateOutputEl);
   createDateOutputEl.innerText = timestamp;
+  //The above timestamp is coming from the browser
+  //This is what is reflected on our Page. The server will create its own timeStamp and this gets converted/displayed in the getComments()
 
   //Comments element
   const createCommentOutputEl = document.createElement('p');
