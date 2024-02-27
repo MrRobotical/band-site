@@ -223,25 +223,25 @@
   }
   .shows__headings-dsk-tablet-dummy-div {
     visibility: hidden;
-    width: 175px;
+    width: 10.938rem;
   }
   .shows__info-date {
     font-weight: 600;
-    width: 175px;
+    width: 10.938rem;
     padding-top: 1rem;
   }
   .shows__info-venue {
     font-weight: 400;
-    width: 175px;
+    width: 10.938rem;
     padding-top: 1rem;
   }
   .shows__info-location {
     font-weight: 400;
-    width: 175px;
+    width: 10.938rem;
     padding-top: 1rem;
   }
   .shows__btn-container {
-    width: 175px;
+    width: 10.938rem;
     margin-bottom: 1rem;
   }
   .shows__buy-btn {

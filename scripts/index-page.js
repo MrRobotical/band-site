@@ -17,56 +17,94 @@ let commentsArr = [
   },
 ];
 
-// DISPLAY COMMENTS FROM ARRAY
-commentsArr.forEach((comment) => {
-  //Parent Element to append to:
-  const createJsCommentsParentContainer =
-    document.querySelector('.comments__posts');
+// Sprint 3 below
+// Sprint 3 below
+// Sprint 3 below
+// Sprint 3 below
+// Sprint 3 below
 
-  //Avatar Container
-  const createJsAvatarContainer = document.createElement('div');
-  createJsAvatarContainer.classList.add('comments__post-new');
-  createJsCommentsParentContainer.prepend(createJsAvatarContainer);
+class BandsiteApi {
+  constructor(apiKey) {
+    this.baseURL = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
+    this.apiKey = apiKey;
+  }
+}
 
-  // Avatar element
-  const createAvatarOutputEl = document.createElement('div');
-  createAvatarOutputEl.classList.add('comments__avatarAnon');
-  createJsAvatarContainer.prepend(createAvatarOutputEl);
+const apiKey = new BandsiteApi('d0eb4df4-5d31-4b4e-ae18-cc5b71f5b1a1');
 
-  //Comments container
-  const createJsbodyContainer = document.createElement('div');
-  createJsbodyContainer.classList.add('comments__body');
-  createJsAvatarContainer.appendChild(createJsbodyContainer);
+async function getComments() {
+  try {
+    const response = await axios.get(
+      `${apiKey.baseURL}comments?api_key=${apiKey.apiKey}`
+    );
+    console.log(response.data);
 
-  //Name & Date container
-  const createJsNameDateContainer = document.createElement('div');
-  createJsNameDateContainer.classList.add('comments__name-date-container');
-  createJsbodyContainer.appendChild(createJsNameDateContainer);
+    // DISPLAY COMMENTS FROM ARRAY
+    response.data.forEach((comment) => {
+      //Parent Element to append to:
+      const createJsCommentsParentContainer =
+        document.querySelector('.comments__posts');
 
-  // Name element
-  const createNameOutputEl = document.createElement('p');
-  createNameOutputEl.classList.add('comments__username');
-  createJsNameDateContainer.appendChild(createNameOutputEl);
-  createNameOutputEl.innerText = comment.name;
+      //Avatar Container
+      const createJsAvatarContainer = document.createElement('div');
+      createJsAvatarContainer.classList.add('comments__post-new');
+      createJsCommentsParentContainer.prepend(createJsAvatarContainer);
 
-  // Date element
-  const createDateOutputEl = document.createElement('p');
-  createDateOutputEl.classList.add('comments__date');
-  createJsNameDateContainer.appendChild(createDateOutputEl);
-  createDateOutputEl.innerText = comment.timestamp;
+      // Avatar element
+      const createAvatarOutputEl = document.createElement('div');
+      createAvatarOutputEl.classList.add('comments__avatarAnon');
+      createJsAvatarContainer.prepend(createAvatarOutputEl);
 
-  //Comments element
-  const createCommentOutputEl = document.createElement('p');
-  createCommentOutputEl.classList.add('comments__txt');
-  createJsbodyContainer.appendChild(createCommentOutputEl);
-  createCommentOutputEl.innerText = comment.text;
+      //Comments container
+      const createJsbodyContainer = document.createElement('div');
+      createJsbodyContainer.classList.add('comments__body');
+      createJsAvatarContainer.appendChild(createJsbodyContainer);
 
-  // Divider Line -
-  const dividerLinesEl = document.createElement('div');
-  dividerLinesEl.classList.add('comments__divider-lines');
-  createJsCommentsParentContainer.prepend(dividerLinesEl);
-});
+      //Name & Date container
+      const createJsNameDateContainer = document.createElement('div');
+      createJsNameDateContainer.classList.add('comments__name-date-container');
+      createJsbodyContainer.appendChild(createJsNameDateContainer);
 
+      // Name element
+      const createNameOutputEl = document.createElement('p');
+      createNameOutputEl.classList.add('comments__username');
+      createJsNameDateContainer.appendChild(createNameOutputEl);
+      createNameOutputEl.innerText = comment.name;
+
+      // Date element
+      const createDateOutputEl = document.createElement('p');
+      createDateOutputEl.classList.add('comments__date');
+      createJsNameDateContainer.appendChild(createDateOutputEl);
+      const dateTimeStamp = new Date(comment.timestamp).toLocaleDateString(
+        'en-US'
+      );
+      createDateOutputEl.innerText = dateTimeStamp;
+
+      //Comments element
+      const createCommentOutputEl = document.createElement('p');
+      createCommentOutputEl.classList.add('comments__txt');
+      createJsbodyContainer.appendChild(createCommentOutputEl);
+      createCommentOutputEl.innerText = comment.comment;
+
+      // Divider Line
+      const dividerLinesEl = document.createElement('div');
+      dividerLinesEl.classList.add('comments__divider-lines');
+      createJsCommentsParentContainer.prepend(dividerLinesEl);
+    });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    console.log(error);
+  }
+}
+
+getComments();
+
+console.log(`${apiKey.baseURL}comments?api_key=${apiKey.apiKey}`);
+
+// EVENT LISTENER & POST COMMENT TO SERVER
+// EVENT LISTENER & POST COMMENT TO SERVER
+// EVENT LISTENER & POST COMMENT TO SERVER
+// EVENT LISTENER & POST COMMENT TO SERVER
 // FORM EVENT LISTENER
 document.querySelector('#form').addEventListener('submit', function (event) {
   event.preventDefault();
@@ -77,19 +115,45 @@ document.querySelector('#form').addEventListener('submit', function (event) {
   // Time Stamp
   const timestamp = new Date().toLocaleDateString('en-US');
 
-  //Push new comment to array
+  //Push new comment to array - Sprint 2
+  // const newComment = {
+  //   name: name,
+  //   timestamp: timestamp,
+  //   text: comment,
+  // };
+  // commentsArr.push(newComment);
+
   const newComment = {
     name: name,
-    timestamp: timestamp,
-    text: comment,
+    comment: comment,
+    // timestamp: timestamp,
   };
 
-  commentsArr.push(newComment);
-  console.log(commentsArr);
+  postComments(newComment);
 
   // // Clear Inputs
   document.querySelector('#name').value = '';
   document.querySelector('#comment').value = '';
+
+  // Post comments to server
+  async function postComments(commentData) {
+    try {
+      const response = await axios.post(
+        `${apiKey.baseURL}comments?api_key=${apiKey.apiKey}`,
+        commentData,
+
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      console.log(error);
+    }
+  }
 
   //Parent element to append to:
   const createJsCommentsParentContainer =
