@@ -1,13 +1,10 @@
 // GET COMMENTS FROM SERVER
-async function getComments() {
+async function loadAndDisplayComments() {
   try {
-    const response = await axios.get(
-      `${InstanceOfBandsiteApi.baseURL}comments?api_key=${InstanceOfBandsiteApi.apiKey}`
-    );
-    console.log(response.data);
+    const comments = await InstanceOfBandsiteApi.getComments();
 
     // Build elements
-    response.data.forEach((comment) => {
+    comments.data.forEach((comment) => {
       //Parent Element to append to:
       const createJsCommentsParentContainer =
         document.querySelector('.comments__posts');
@@ -63,7 +60,7 @@ async function getComments() {
     console.log(error);
   }
 }
-getComments();
+loadAndDisplayComments();
 
 // FORM EVENT LISTENER
 document.querySelector('#form').addEventListener('submit', function (event) {
@@ -93,17 +90,7 @@ document.querySelector('#form').addEventListener('submit', function (event) {
   // Post comments to server
   async function postComments(commentData) {
     try {
-      const response = await axios.post(
-        `${InstanceOfBandsiteApi.baseURL}comments?api_key=${InstanceOfBandsiteApi.apiKey}`,
-        commentData,
-
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      console.log(response.data);
+      await InstanceOfBandsiteApi.postComments(commentData);
     } catch (error) {
       console.error('Error fetching data:', error);
       console.log(error);

@@ -41,14 +41,11 @@ nonMobileDummyContainer.classList.add('shows__headings-dsk-tablet-dummy-div');
 nonMobileHeaderContainer.appendChild(nonMobileDummyContainer);
 
 // GET SHOWS FROM SERVER
-async function getShows() {
+async function loadAndDisplayShows() {
   try {
-    const response = await axios.get(
-      `${InstanceOfBandsiteApi.baseURL}showdates?api_key=${InstanceOfBandsiteApi.apiKey}`
-    );
-    console.log(response.data);
+    const shows = await InstanceOfBandsiteApi.getShows();
 
-    response.data.forEach((show) => {
+    shows.data.forEach((show) => {
       //Top level element to append to
       const showsParentContainer = document.querySelector(
         '.shows__data-container'
@@ -124,77 +121,7 @@ async function getShows() {
     console.log(error);
   }
 }
-getShows();
-
-// SHOWS DATA CONTAINERS & ELEMENTS
-// showsArr.forEach((show) => {
-//   //Top level element to append to
-//   const showsParentContainer = document.querySelector('.shows__data-container');
-
-//   //Top level container creation
-//   const showsInfoContainer = document.createElement('div');
-//   showsInfoContainer.classList.add('shows__info-container');
-//   showsParentContainer.appendChild(showsInfoContainer);
-
-//   //Date title - Mobile
-//   const dateTitleMobile = document.createElement('div');
-//   dateTitleMobile.classList.add('shows__heading-title-mobile');
-//   showsInfoContainer.appendChild(dateTitleMobile);
-//   dateTitleMobile.innerText = 'DATE';
-
-//   //Date info
-//   const dateInfo = document.createElement('div');
-//   dateInfo.classList.add('shows__info-date');
-//   showsInfoContainer.appendChild(dateInfo);
-//   dateInfo.innerText = show.date;
-
-//   //Venue title - Mobile
-//   const venueTitleMobile = document.createElement('div');
-//   venueTitleMobile.classList.add('shows__heading-title-mobile');
-//   showsInfoContainer.appendChild(venueTitleMobile);
-//   venueTitleMobile.innerText = 'VENUE';
-
-//   //Venue info
-//   const venueInfo = document.createElement('div');
-//   venueInfo.classList.add('shows__info-venue');
-//   showsInfoContainer.appendChild(venueInfo);
-//   venueInfo.innerText = show.venue;
-
-//   //Location title - Mobile
-//   const locationTitleMobile = document.createElement('div');
-//   locationTitleMobile.classList.add('shows__heading-title-mobile');
-//   showsInfoContainer.appendChild(locationTitleMobile);
-//   locationTitleMobile.innerText = 'LOCATION';
-
-//   //Location info
-//   const locationInfo = document.createElement('div');
-//   locationInfo.classList.add('shows__info-location');
-//   showsInfoContainer.appendChild(locationInfo);
-//   locationInfo.innerText = show.location;
-
-//   //Button container
-//   const buyButtonContainer = document.createElement('div');
-//   buyButtonContainer.classList.add('shows__btn-container');
-//   showsInfoContainer.appendChild(buyButtonContainer);
-
-//   //Button element
-//   const buyButton = document.createElement('button');
-//   buyButton.classList.add('shows__buy-btn');
-//   buyButtonContainer.appendChild(buyButton);
-//   buyButton.innerText = 'BUY TICKETS';
-
-//   //Divider line
-//   const dividerLine = document.createElement('div');
-//   dividerLine.classList.add('shows__divider-lines');
-//   showsInfoContainer.insertAdjacentElement('afterend', dividerLine);
-
-//   //Styling-Hightlight -- Selected
-//   buyButton.addEventListener('click', function () {
-//     removeSelectedClass();
-//     // Add the selected class to the clicked item
-//     showsInfoContainer.classList.add('shows__info-container--selected');
-//   });
-// });
+loadAndDisplayShows();
 
 // Remove the selected class from all items
 function removeSelectedClass() {
