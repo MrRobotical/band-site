@@ -54,7 +54,7 @@ class BandsiteApi {
       const response = await axios.put(
         `${this.baseURL}comments/${commentId}/like?api_key=${this.apiKey}`
       );
-      // console.log('Comment ID:', response.data.id);
+      console.log('Comment ID:', response.data.id);
       return response.data;
     } catch (error) {
       console.error('Error fetching data:', error);

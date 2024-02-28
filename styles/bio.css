@@ -189,6 +189,32 @@
   .comments__body {
     width: 70vw;
   }
+  .comments__likes-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .comments__like-btn {
+    font-size: 30px;
+    color: #323232;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+  }
+  .comments__like-btn-active {
+    color: rgb(255, 60, 255);
+  }
+  .comments__like-btn:hover {
+    transform: scale(1.2);
+  }
+  .comments__like-counter {
+    margin-left: auto;
+    padding-right: 0.55rem;
+    display: inline-block;
+  }
+  .comments__like-counter-double-character {
+    padding-right: 0.3rem;
+  }
   .comments__divider-lines {
     width: 90%;
     height: 1px;
@@ -381,6 +407,11 @@
     height: 2.5rem;
     border-radius: 4px;
     border: none;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+  }
+  .comments__form-btn:hover {
+    transform: scale(1.05);
   }
   .comments__posts {
     margin-bottom: 5rem;
@@ -423,6 +454,32 @@
   }
   .comments__body {
     width: 70vw;
+  }
+  .comments__likes-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .comments__like-btn {
+    font-size: 30px;
+    color: #323232;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+  }
+  .comments__like-btn-active {
+    color: rgb(255, 60, 255);
+  }
+  .comments__like-btn:hover {
+    transform: scale(1.2);
+  }
+  .comments__like-counter {
+    margin-left: auto;
+    padding-right: 0.55rem;
+    display: inline-block;
+  }
+  .comments__like-counter-double-character {
+    padding-right: 0.3rem;
   }
   .comments__divider-lines {
     width: 76vw;

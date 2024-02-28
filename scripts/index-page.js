@@ -50,6 +50,48 @@ async function loadAndDisplayComments() {
       createJsbodyContainer.appendChild(createCommentOutputEl);
       createCommentOutputEl.innerText = comment.comment;
 
+      //LIKE BUTTON DRAFT CODE BELOW
+
+      //Likes container
+      const likesContainer = document.createElement('div');
+      likesContainer.classList.add('comments__likes-container');
+      createJsbodyContainer.appendChild(likesContainer);
+
+      //Like button element
+      const likeButton = document.createElement('ion-icon');
+      likeButton.setAttribute('name', 'musical-notes-outline');
+      likeButton.classList.add('comments__like-btn');
+      likesContainer.appendChild(likeButton);
+
+      //Likes counter
+      const likesCounter = document.createElement('span');
+      likesCounter.classList.add('comments__like-counter');
+      likesCounter.textContent = comment.likes;
+      likesContainer.appendChild(likesCounter);
+      if (likesCounter.textContent.length === 2) {
+        likesCounter.classList.add('comments__like-counter-double-character');
+      }
+      if (comment.likes > 0) {
+        likeButton.classList.add('comments__like-btn-active');
+      }
+
+      //Attach event listener to the like icons
+      likeButton.addEventListener('click', async () => {
+        try {
+          const updatedLikes = await InstanceOfBandsiteApi.incrementLikes(
+            comment.id
+          );
+          console.log(updatedLikes);
+          comment.likes = updatedLikes.likes;
+          likesCounter.textContent = comment.likes;
+          if (comment.likes > 0) {
+            likeButton.classList.add('comments__like-btn-active');
+          }
+        } catch (error) {
+          console.error('Error liking comment:', error);
+        }
+      });
+
       // Divider Line
       const dividerLinesEl = document.createElement('div');
       dividerLinesEl.classList.add('comments__divider-lines');
@@ -60,6 +102,7 @@ async function loadAndDisplayComments() {
     console.log(error);
   }
 }
+
 loadAndDisplayComments();
 
 // FORM EVENT LISTENER
