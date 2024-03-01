@@ -50,14 +50,12 @@ async function loadAndDisplayComments() {
       createJsbodyContainer.appendChild(createCommentOutputEl);
       createCommentOutputEl.innerText = comment.comment;
 
-      //LIKE BUTTON DRAFT CODE BELOW
-
       //Likes container
       const likesContainer = document.createElement('div');
       likesContainer.classList.add('comments__likes-container');
       createJsbodyContainer.appendChild(likesContainer);
 
-      //Like button element
+      //Like icon element
       const likeButton = document.createElement('ion-icon');
       likeButton.setAttribute('name', 'musical-notes-outline');
       likeButton.classList.add('comments__like-btn');
@@ -81,7 +79,6 @@ async function loadAndDisplayComments() {
           const updatedLikes = await InstanceOfBandsiteApi.incrementLikes(
             comment.id
           );
-          console.log(updatedLikes);
           comment.likes = updatedLikes.likes;
           likesCounter.textContent = comment.likes;
           if (comment.likes > 0) {
@@ -106,86 +103,120 @@ async function loadAndDisplayComments() {
 loadAndDisplayComments();
 
 // FORM EVENT LISTENER
-document.querySelector('#form').addEventListener('submit', function (event) {
-  event.preventDefault();
+document
+  .querySelector('#form')
+  .addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-  //Input variables from Form
-  const name = document.querySelector('#name').value;
-  const comment = document.querySelector('#comment').value;
+    //Input variables from Form
+    const name = document.querySelector('#name').value;
+    const comment = document.querySelector('#comment').value;
 
-  // Time Stamp
-  const timestamp = new Date().toLocaleDateString('en-US');
+    // Time Stamp
+    const timestamp = new Date().toLocaleDateString('en-US');
 
-  // Comment object from Form input
-  const newComment = {
-    name: name,
-    comment: comment,
-    // timestamp: timestamp, - This line was causing an error
-  };
+    // Comment object from Form input
+    const newComment = {
+      name: name,
+      comment: comment,
+      // timestamp: timestamp, - This line was causing an error
+    };
 
-  // INVOKE POST COMMENTS FUNCTION
-  postComments(newComment);
+    // INVOKE POST COMMENTS FUNCTION
+    const createdCommentResponse = await postComments(newComment);
+    const newCommentId = createdCommentResponse.id;
 
-  // // Clear Inputs
-  document.querySelector('#name').value = '';
-  document.querySelector('#comment').value = '';
+    // // Clear Inputs
+    document.querySelector('#name').value = '';
+    document.querySelector('#comment').value = '';
 
-  // Post comments to server
-  async function postComments(commentData) {
-    try {
-      await InstanceOfBandsiteApi.postComments(commentData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      console.log(error);
+    // Post comments to server
+    async function postComments(commentData) {
+      try {
+        const response = await InstanceOfBandsiteApi.postComments(commentData);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        console.log(error);
+      }
     }
-  }
 
-  //Parent element to append to:
-  const createJsCommentsParentContainer =
-    document.querySelector('.comments__posts');
+    //Parent element to append to:
+    const createJsCommentsParentContainer =
+      document.querySelector('.comments__posts');
 
-  //Container that holds avatar & comments body
-  const createJsAvatarContainer = document.createElement('div');
-  createJsAvatarContainer.classList.add('comments__post-new');
-  createJsCommentsParentContainer.prepend(createJsAvatarContainer);
+    //Container that holds avatar & comments body
+    const createJsAvatarContainer = document.createElement('div');
+    createJsAvatarContainer.classList.add('comments__post-new');
+    createJsCommentsParentContainer.prepend(createJsAvatarContainer);
 
-  // Avatar element
-  const createAvatarOutputEl = document.createElement('div');
-  createAvatarOutputEl.classList.add('comments__avatar-loggedIn');
-  createJsAvatarContainer.prepend(createAvatarOutputEl);
+    // Avatar element
+    const createAvatarOutputEl = document.createElement('div');
+    createAvatarOutputEl.classList.add('comments__avatar-loggedIn');
+    createJsAvatarContainer.prepend(createAvatarOutputEl);
 
-  //Comments container
-  const createJsbodyContainer = document.createElement('div');
-  createJsbodyContainer.classList.add('comments__body');
-  createJsAvatarContainer.appendChild(createJsbodyContainer);
+    //Comments container
+    const createJsbodyContainer = document.createElement('div');
+    createJsbodyContainer.classList.add('comments__body');
+    createJsAvatarContainer.appendChild(createJsbodyContainer);
 
-  //Name & date container
-  const createJsNameDateContainer = document.createElement('div');
-  createJsNameDateContainer.classList.add('comments__name-date-container');
-  createJsbodyContainer.appendChild(createJsNameDateContainer);
+    //Name & date container
+    const createJsNameDateContainer = document.createElement('div');
+    createJsNameDateContainer.classList.add('comments__name-date-container');
+    createJsbodyContainer.appendChild(createJsNameDateContainer);
 
-  // Name element
-  const createNameOutputEl = document.createElement('p');
-  createNameOutputEl.classList.add('comments__username');
-  createJsNameDateContainer.appendChild(createNameOutputEl);
-  createNameOutputEl.innerText = name;
+    // Name element
+    const createNameOutputEl = document.createElement('p');
+    createNameOutputEl.classList.add('comments__username');
+    createJsNameDateContainer.appendChild(createNameOutputEl);
+    createNameOutputEl.innerText = name;
 
-  // Date element
-  const createDateOutputEl = document.createElement('p');
-  createDateOutputEl.classList.add('comments__date');
-  createJsNameDateContainer.appendChild(createDateOutputEl);
-  createDateOutputEl.innerText = timestamp;
-  //The above timestamp is coming from the browser
-  //This is what is reflected on our Page. The server will create its own timeStamp and this gets converted/displayed in the getComments()
+    // Date element
+    const createDateOutputEl = document.createElement('p');
+    createDateOutputEl.classList.add('comments__date');
+    createJsNameDateContainer.appendChild(createDateOutputEl);
+    createDateOutputEl.innerText = timestamp;
 
-  //Comments element
-  const createCommentOutputEl = document.createElement('p');
-  createCommentOutputEl.classList.add('comments__txt');
-  createJsbodyContainer.appendChild(createCommentOutputEl);
-  createCommentOutputEl.innerText = comment;
+    //Comments element
+    const createCommentOutputEl = document.createElement('p');
+    createCommentOutputEl.classList.add('comments__txt');
+    createJsbodyContainer.appendChild(createCommentOutputEl);
+    createCommentOutputEl.innerText = comment;
 
-  // Divider Line element
-  const dividerLinesEl = document.createElement('div');
-  dividerLinesEl.classList.add('comments__divider-lines');
-  createJsCommentsParentContainer.prepend(dividerLinesEl);
-});
+    //Likes container
+    const likesContainer = document.createElement('div');
+    likesContainer.classList.add('comments__likes-container');
+    createJsbodyContainer.appendChild(likesContainer);
+
+    //Like icon element
+    const likeButton = document.createElement('ion-icon');
+    likeButton.setAttribute('name', 'musical-notes-outline');
+    likeButton.classList.add('comments__like-btn');
+    likesContainer.appendChild(likeButton);
+
+    //Likes counter
+    const likesCounter = document.createElement('span');
+    likesCounter.classList.add('comments__like-counter');
+    likesCounter.textContent = 0;
+    likesContainer.appendChild(likesCounter);
+
+    //Likes event listener on new comment
+    likeButton.addEventListener('click', async () => {
+      try {
+        const updatedLikes = await InstanceOfBandsiteApi.incrementLikes(
+          newCommentId
+        );
+        likesCounter.textContent = updatedLikes.likes;
+        if (updatedLikes.likes > 0) {
+          likeButton.classList.add('comments__like-btn-active');
+        }
+      } catch (error) {
+        console.error('Error liking comment:', error);
+      }
+    });
+
+    // Divider Line element
+    const dividerLinesEl = document.createElement('div');
+    dividerLinesEl.classList.add('comments__divider-lines');
+    createJsCommentsParentContainer.prepend(dividerLinesEl);
+  });
