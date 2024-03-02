@@ -3,12 +3,12 @@ async function loadAndDisplayComments() {
   try {
     const comments = await InstanceOfBandsiteApi.getComments();
 
+    //Parent Element to append to:
+    const createJsCommentsParentContainer =
+      document.querySelector('.comments__posts');
+
     // Build elements
     comments.data.forEach((comment) => {
-      //Parent Element to append to:
-      const createJsCommentsParentContainer =
-        document.querySelector('.comments__posts');
-
       //Avatar Container
       const createJsAvatarContainer = document.createElement('div');
       createJsAvatarContainer.classList.add('comments__post-new');

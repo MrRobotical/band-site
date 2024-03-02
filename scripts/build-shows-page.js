@@ -45,13 +45,13 @@ async function loadAndDisplayShows() {
   try {
     const shows = await InstanceOfBandsiteApi.getShows();
 
-    shows.data.forEach((show) => {
-      //Top level element to append to
-      const showsParentContainer = document.querySelector(
-        '.shows__data-container'
-      );
+    //Top level container to append to
+    const showsParentContainer = document.querySelector(
+      '.shows__data-container'
+    );
 
-      //Top level container creation
+    shows.data.forEach((show) => {
+      //Show info ontainer
       const showsInfoContainer = document.createElement('div');
       showsInfoContainer.classList.add('shows__info-container');
       showsParentContainer.appendChild(showsInfoContainer);
@@ -110,7 +110,7 @@ async function loadAndDisplayShows() {
       showsInfoContainer.insertAdjacentElement('afterend', dividerLine);
 
       //Styling-Hightlight -- Selected
-      buyButton.addEventListener('click', function () {
+      showsInfoContainer.addEventListener('click', function () {
         removeSelectedClass();
         // Add the selected class to the clicked item
         showsInfoContainer.classList.add('shows__info-container--selected');
