@@ -26,7 +26,7 @@ Likes counter interaction with server
 - Event listener to highlight selected show and remove highlight from others
 
 
-### Topics Covered:
+### Styling Topics Covered:
 
 - **SCSS Modular Design**: Utilization of SCSS partials to structure the codebase for styles, which enhances organization and maintainability.
 - **Responsive Design**: Implementation of mobile-first design principles, with media queries targeting tablet and desktop breakpoints for adaptive styling.
